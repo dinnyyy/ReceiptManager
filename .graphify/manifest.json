@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787044102309.388,
-    "hash": "228f3e20e6e3df6ae2e6d4954954a3a4"
+    "mtime": 1787044381737.3816,
+    "hash": "b1cf2f36d0f2cbb54cf9a536c830ede7"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787043891965.3928,
-    "hash": "e9e9eb8ce94af7ad04df8338bcf3e630"
+    "mtime": 1787044122869.3875,
+    "hash": "30886fba77070a9d8b369e018355e8cf"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -184,8 +184,8 @@
     "hash": "eeff1eda1962abdec8f7d99ca8858be5"
   },
   "App/AppRouter.swift": {
-    "mtime": 1787043401017.404,
-    "hash": "c6643ce620691498ac8bc850d2fea5c1"
+    "mtime": 1787044195797.3857,
+    "hash": "1ea4c036e8c77691321c7a6e757ebdc3"
   },
   "App/LaunchView.swift": {
     "mtime": 1787043425573.4036,
@@ -344,11 +344,55 @@
     "hash": "338882eebeb1d0b6955a8df45a91e572"
   },
   "Features/PurchaseReview/ReviewView.swift": {
-    "mtime": 1787044090993.3882,
-    "hash": "fa9510fe61ca4f4b3034efc8dba0f4e8"
+    "mtime": 1787044231089.385,
+    "hash": "09c702b20a7e7624a9ae72184b01c9f6"
   },
   "Features/PurchaseReview/ReviewViewModel.swift": {
     "mtime": 1787044049629.3892,
     "hash": "80b5fa1ac59319391ba1210309c59eb4"
+  },
+  "Features/Home/HomeView.swift": {
+    "mtime": 1787044187249.386,
+    "hash": "3421bd3c1790c2a1cd7887b012421a9a"
+  },
+  "Features/Home/HomeViewModel.swift": {
+    "mtime": 1787044144369.387,
+    "hash": "63e5a91320ad02f8498796bc16b98c56"
+  },
+  "Features/PurchaseDetail/PurchaseDetailView.swift": {
+    "mtime": 1787044309293.3833,
+    "hash": "e4c1e5a9aceb94b1110b027379d84ca0"
+  },
+  "Features/PurchaseDetail/PurchaseDetailViewModel.swift": {
+    "mtime": 1787044318133.383,
+    "hash": "7080354b2f0beae4c08b8f744717dab0"
+  },
+  "Features/PurchaseDetail/PurchaseEditView.swift": {
+    "mtime": 1787044296889.3835,
+    "hash": "307eafaec9b16c102b8c2cebbc633751"
+  },
+  "Features/Shared/PurchaseRowView.swift": {
+    "mtime": 1787044154817.3867,
+    "hash": "9c913715f7aed189fd5ef330c6720147"
+  },
+  "Features/Shared/PurposeChipGrid.swift": {
+    "mtime": 1787044218813.3853,
+    "hash": "8963b28104f8f7881076fab90f091ed8"
+  },
+  "Features/Shared/SyncStateBadge.swift": {
+    "mtime": 1787044161181.3867,
+    "hash": "bff3838860f023abe475f2c228d68d80"
+  },
+  "Features/Shared/ZoomableImageView.swift": {
+    "mtime": 1787044223425.3853,
+    "hash": "4520450d0938a9e75c735f6fdbaa295e"
+  },
+  "Features/Vault/VaultView.swift": {
+    "mtime": 1787044363905.382,
+    "hash": "547fed6889efc7fbaf7326d4c36f3dc8"
+  },
+  "Features/Vault/VaultViewModel.swift": {
+    "mtime": 1787044344589.3826,
+    "hash": "0690c37e75c35c4b3a4eb00c8f5163cf"
   }
 }
