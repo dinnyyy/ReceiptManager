@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787042547909.4236,
-    "hash": "1ef22cd9e89eb6159b4497a931531bcf"
+    "mtime": 1787043081605.4114,
+    "hash": "7030383db9a12e3dcc39abaab4a75498"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,7 +64,115 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787042234360.6619,
-    "hash": "2ad6bd1b65b1b07dd091e4323c1471a5"
+    "mtime": 1787042572289.423,
+    "hash": "d2cf4529d61297c149bb044a40f802fd"
+  },
+  "Packages/ReceiptVaultCore/Package.swift": {
+    "mtime": 1787042703629.42,
+    "hash": "f29c2f5e01755b67ea456bfb4a820e18"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Attachment.swift": {
+    "mtime": 1787042898873.4155,
+    "hash": "848c3ccea3c3827e2edf7fc711636fd1"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/DateOnly.swift": {
+    "mtime": 1787042866761.4163,
+    "hash": "5d4c11c99703f96ac7062e7f39657434"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Enumerations.swift": {
+    "mtime": 1787042726865.4194,
+    "hash": "3f75d9ff3f8828bc3b37e00a775250f3"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Item.swift": {
+    "mtime": 1787042848417.4167,
+    "hash": "e6f207b290767069e9e11905634a679d"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Purchase.swift": {
+    "mtime": 1787042841297.4167,
+    "hash": "6ccd63738f0485bb2ae6a4e5ab3b0357"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Warranty.swift": {
+    "mtime": 1787042860109.4165,
+    "hash": "59ab5295b527afe770cd375e843fd5fe"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Duplicate/DuplicateDetector.swift": {
+    "mtime": 1787042813593.4175,
+    "hash": "deec0c3180bc26ac1d9421886064d091"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Entitlement/EntitlementRules.swift": {
+    "mtime": 1787042830813.417,
+    "hash": "40f8beddb54e0dc121ddb0db48652df0"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Export/CSVBuilder.swift": {
+    "mtime": 1787042795165.418,
+    "hash": "17070ff96af8a18c4132f1a95005d17a"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/FinancialYear/AustralianFinancialYear.swift": {
+    "mtime": 1787042740681.4192,
+    "hash": "76f077f93054402f9120d75f584576a5"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Money/Money.swift": {
+    "mtime": 1787042734893.4192,
+    "hash": "2919006ec0ce0661b08d4b7cdcb90567"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Parsing/ReceiptDateParser.swift": {
+    "mtime": 1787042755665.4187,
+    "hash": "51f06cd54359c1d95bc8f9f5d4c1af36"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Parsing/ReceiptFieldScorer.swift": {
+    "mtime": 1787042783629.4182,
+    "hash": "97d1c64178c094397e7241f51b064c63"
+  },
+  "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Sync/SyncStateMachine.swift": {
+    "mtime": 1787042821181.4172,
+    "hash": "76e76a2f75bac61f2e0006b03fd34913"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/AttachmentTests.swift": {
+    "mtime": 1787043048805.412,
+    "hash": "9ba6a2d1e004e9022dc6950884d43fc4"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/AustralianFinancialYearTests.swift": {
+    "mtime": 1787042923189.415,
+    "hash": "07a25a73479e0b95318f117f05a54f6d"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/CSVBuilderTests.swift": {
+    "mtime": 1787042972801.4138,
+    "hash": "1c2cd30354b80a4e71c8331985e04e91"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/DateOnlyTests.swift": {
+    "mtime": 1787042909549.4153,
+    "hash": "93d2220fddb41f1f0f2288bd6289a7d6"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/DuplicateDetectorTests.swift": {
+    "mtime": 1787042996981.4133,
+    "hash": "26a14bba234bdb612b1c2b4c01b4c5e6"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/EntitlementRulesTests.swift": {
+    "mtime": 1787043011069.4128,
+    "hash": "e94d23c251b9c037d02d90a04108f711"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/MoneyTests.swift": {
+    "mtime": 1787043030945.4126,
+    "hash": "b2aec71cf9f909019fdc1890e28ee5ec"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/PurchaseTests.swift": {
+    "mtime": 1787043042013.4124,
+    "hash": "a894e005d17e054d43752c1c4ce13726"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/ReceiptDateParserTests.swift": {
+    "mtime": 1787042929157.4148,
+    "hash": "d215ee57e93d98edbe37e4862360c721"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/ReceiptFieldScorerTests.swift": {
+    "mtime": 1787042938337.4146,
+    "hash": "8373af89a3a87770f90d6b437ec1ecd3"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/SyncStateMachineTests.swift": {
+    "mtime": 1787043003641.413,
+    "hash": "8e2f93d799cb5a3324390b57a68c3b0a"
+  },
+  "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/WarrantyTests.swift": {
+    "mtime": 1787043021717.4126,
+    "hash": "cc78ce028f7afb00dd53849338e74b39"
   }
 }

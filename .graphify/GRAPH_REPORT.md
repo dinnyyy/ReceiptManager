@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-08-18)
 
 ## Corpus Check
-- Corpus is ~8,550 words - fits in a single context window. You may not need a graph.
+- Corpus is ~15,634 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 72 nodes · 110 edges · 10 communities detected
+- 74 nodes · 114 edges · 10 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 48 · references: 27 · MODIFIES: 14 · reads_from: 10 · ON_BRANCH: 5 · PARENT_OF: 3 · triggers: 3
+- Edge kinds: contains: 48 · references: 27 · MODIFIES: 14 · reads_from: 10 · ON_BRANCH: 7 · PARENT_OF: 5 · triggers: 3
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 17 · Candidates: 26
-- Excluded: 0 untracked · 3 ignored · 0 sensitive · 0 missing committed
+- Included files: 44 · Candidates: 53
+- Excluded: 0 untracked · 21 ignored · 0 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `d5ee20a`
+- Built from Git commit: `b57c9cd`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `public.delete_account_data()` - 6 edges
@@ -42,8 +42,8 @@
 ## Communities
 
 ### Community 0 - "Core Purchase Schema"
-Cohesion: 0.18
-Nodes (6): claude/iphone-app-mvp-phase-1-p1std2, main, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, caf16db Add initial Receipt Manager research and spec docs, d5ee20a Add Supabase schema, RLS policies, and RPCs; verified against local Postgres, f10f37b Scaffold project: CLAUDE.md plan, README, repo layout, move source docs into docs/
+Cohesion: 0.17
+Nodes (8): claude/iphone-app-mvp-phase-1-p1std2, main, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, a2766ae graphify update: index Supabase schema; stop tracking ephemeral graphify state, b57c9cd Add ReceiptVaultCore: pure-Swift domain models and business logic, caf16db Add initial Receipt Manager research and spec docs, d5ee20a Add Supabase schema, RLS policies, and RPCs; verified against local Postgres, f10f37b Scaffold project: CLAUDE.md plan, README, repo layout, move source docs into docs/
 
 ### Community 1 - "Project Documentation"
 Cohesion: 0.40
