@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-08-18)
 
 ## Corpus Check
-- Corpus is ~37,051 words - fits in a single context window. You may not need a graph.
+- Corpus is ~38,360 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 88 nodes · 142 edges · 10 communities detected
+- 91 nodes · 147 edges · 11 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 48 · references: 27 · ON_BRANCH: 21 · PARENT_OF: 19 · MODIFIES: 14 · reads_from: 10 · triggers: 3
+- Edge kinds: contains: 48 · references: 27 · ON_BRANCH: 23 · PARENT_OF: 21 · MODIFIES: 15 · reads_from: 10 · triggers: 3
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 113 · Candidates: 126
+- Included files: 116 · Candidates: 129
 - Excluded: 0 untracked · 21 ignored · 1 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `cba5df2`
+- Built from Git commit: `e3c6353`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `public.delete_account_data()` - 6 edges
@@ -33,8 +33,12 @@
 10. `public.purchase_tags` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md` --ON_BRANCH--> `claude/iphone-app-mvp-phase-1-p1std2`  [EXTRACTED]
+  git → git  _Bridges community 8 → community 0_
 - `95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md` --PARENT_OF--> `d5ee20a Add Supabase schema, RLS policies, and RPCs; verified against local Postgres`  [EXTRACTED]
-  git → git  _Bridges community 0 → community 1_
+  git → git  _Bridges community 8 → community 1_
+- `d5ee20a Add Supabase schema, RLS policies, and RPCs; verified against local Postgres` --ON_BRANCH--> `claude/iphone-app-mvp-phase-1-p1std2`  [EXTRACTED]
+  git → git  _Bridges community 1 → community 0_
 
 ## Hyperedges (group relationships)
 - **Workspace-scoped RLS enforced across core tables** — workspaces_table, purchases_table, items_table, attachments_table [EXTRACTED 0.85]
@@ -43,8 +47,8 @@
 ## Communities
 
 ### Community 0 - "Core Purchase Schema"
-Cohesion: 0.16
-Nodes (21): claude/iphone-app-mvp-phase-1-p1std2, main, 0db04cc Add Home, Purchase Detail, and Vault screens, 1bf43bd Add export builder (shared PDF renderer, CSV, share sheet); fix enum conformance, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 884db08 graphify update: index Home/PurchaseDetail/Vault, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md (+13 more)
+Cohesion: 0.19
+Nodes (19): claude/iphone-app-mvp-phase-1-p1std2, 0db04cc Add Home, Purchase Detail, and Vault screens, 1bf43bd Add export builder (shared PDF renderer, CSV, share sheet); fix enum conformance, 5051277 graphify update: index export builder and subscriptions, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 884db08 graphify update: index Home/PurchaseDetail/Vault, 9c27588 Add Sign in with Apple, Supabase email OTP, and workspace bootstrap (+11 more)
 
 ### Community 1 - "Project Documentation"
 Cohesion: 0.20
@@ -75,17 +79,21 @@ Cohesion: 0.67
 Nodes (5): public.items, public.purchase_items, public.purchases, public.warranties, public.workspaces
 
 ### Community 8 - "PDF Export"
+Cohesion: 0.40
+Nodes (4): main, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, caf16db Add initial Receipt Manager research and spec docs, f10f37b Scaffold project: CLAUDE.md plan, README, repo layout, move source docs into docs/
+
+### Community 9 - "Apple Sign-In"
 Cohesion: 0.70
 Nodes (4): public.attachments, public.items, public.purchases, public.workspaces
 
-### Community 9 - "Apple Sign-In"
+### Community 10 - "Community 10"
 Cohesion: 0.83
 Nodes (2): docs/ios-mvp-specification.docx, docs/viability-research.docx
 
 ## Knowledge Gaps
 - **1 isolated node(s):** `auth.users`
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Apple Sign-In`** (2 nodes): `docs/ios-mvp-specification.docx`, `docs/viability-research.docx`
+- **Thin community `Community 10`** (2 nodes): `docs/ios-mvp-specification.docx`, `docs/viability-research.docx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

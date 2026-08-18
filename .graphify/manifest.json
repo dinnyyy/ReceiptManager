@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787044909397.3696,
-    "hash": "250ab7e27ddd9c49c866edcb84737478"
+    "mtime": 1787045030805.3667,
+    "hash": "3b9e4f80de2805e4931f92ba18e10583"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787044537197.378,
-    "hash": "d7ea0d02c592d12534ee3f1136a37308"
+    "mtime": 1787044931461.3691,
+    "hash": "b79b6a9a66f3dbb56ca330cdd72ef51c"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -212,16 +212,16 @@
     "hash": "f7ef073b3020495d105e692f8f975609"
   },
   "Core/Auth/AuthService.swift": {
-    "mtime": 1787043290601.4065,
-    "hash": "6d71f8148d47b6bc7dd0b62d86bbb86a"
+    "mtime": 1787044978513.368,
+    "hash": "7dea6da784e2be1e0e3b542aef883e8a"
   },
   "Core/Auth/SupabaseAuthService.swift": {
-    "mtime": 1787043581201.4,
-    "hash": "cd2582dad1c1347387e29b5f11fbd5b9"
+    "mtime": 1787044982309.368,
+    "hash": "251882621af396f2187fee4b214eda42"
   },
   "Core/Backend/SupabaseBackend.swift": {
-    "mtime": 1787043554929.4006,
-    "hash": "84d451660a8e7c9d4b5877828672159a"
+    "mtime": 1787044974073.3682,
+    "hash": "8cbbd8ddd18db79f2a33666cb2084926"
   },
   "Core/Backend/SupabaseConfig.swift": {
     "mtime": 1787043543865.401,
@@ -248,8 +248,8 @@
     "hash": "943a329354dd459345544fba6e952713"
   },
   "Core/Preview/PreviewServices.swift": {
-    "mtime": 1787043389613.4043,
-    "hash": "15d17aa8baf3dd1c886774d9932be862"
+    "mtime": 1787044985721.3677,
+    "hash": "602f2383e67135c60b92d8ebbb4dccb1"
   },
   "Core/Storage/AttachmentService.swift": {
     "mtime": 1787043303717.4062,
@@ -450,5 +450,17 @@
   "Features/Paywall/PaywallView.swift": {
     "mtime": 1787044885153.37,
     "hash": "3ffd1b69256dc967b718c0860c7458a9"
+  },
+  "Features/Settings/SettingsView.swift": {
+    "mtime": 1787045019845.367,
+    "hash": "4445c93ec014a27cb0b7ed0767aadefd"
+  },
+  "Features/Settings/SettingsViewModel.swift": {
+    "mtime": 1787045002813.3674,
+    "hash": "ed43a23df15badbef4160fb43e4f9c37"
+  },
+  "supabase/functions/delete-account/index.ts": {
+    "mtime": 1787044968141.3682,
+    "hash": "8c68ea24bbdea7970cdd039b652c3eb0"
   }
 }
