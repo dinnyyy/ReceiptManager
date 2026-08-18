@@ -217,10 +217,11 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [ ] Review & Save screen (editable fields, purpose chips, notes)
 
 ### Persistence & sync
-- [ ] SwiftData models
-- [ ] PurchaseRepository (save/upsert/fetch/search/delete)
-- [ ] AttachmentService (stage/upload/fetch, deterministic storage paths)
-- [ ] Outbox + retry/backoff + sync-state UI indicators
+- [x] SwiftData models (Purchase/Item/Attachment/Warranty/Folder/Tag/Outbox)
+- [x] PurchaseRepository + ItemRepository (local-first, search runs against local cache)
+- [x] AttachmentService (stage/upload/fetch, deterministic storage paths, sha256)
+- [x] Outbox + retry/backoff (exponential, capped 5min) + network/foreground resume
+- [ ] Sync-state UI indicators (wired into screens as each screen is built)
 
 ### Retrieval
 - [ ] Home tab (scan CTA, inbox, recent, warranty-ending-soon)

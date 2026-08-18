@@ -22,6 +22,7 @@ final class AppEnvironment {
     let subscriptionService: SubscriptionService
     let notificationScheduler: NotificationScheduler
     let analyticsService: AnalyticsService
+    let syncEngine: SyncEngine?
 
     /// V1 has exactly one personal workspace per account (spec 7.1); this
     /// is populated right after `create_initial_workspace` succeeds during
@@ -38,7 +39,8 @@ final class AppEnvironment {
         fieldParser: ReceiptFieldParsing,
         subscriptionService: SubscriptionService,
         notificationScheduler: NotificationScheduler,
-        analyticsService: AnalyticsService
+        analyticsService: AnalyticsService,
+        syncEngine: SyncEngine?
     ) {
         self.modelContainer = modelContainer
         self.authService = authService
@@ -50,24 +52,27 @@ final class AppEnvironment {
         self.subscriptionService = subscriptionService
         self.notificationScheduler = notificationScheduler
         self.analyticsService = analyticsService
+        self.syncEngine = syncEngine
     }
 
     static func live() -> AppEnvironment {
         let container = PersistenceSchema.makeContainer()
         let context = ModelContext(container)
         let backend = SupabaseBackend.shared
+        let attachmentService = SupabaseAttachmentService(backend: backend, modelContext: context)
 
         return AppEnvironment(
             modelContainer: container,
             authService: SupabaseAuthService(backend: backend),
             purchaseRepository: SwiftDataPurchaseRepository(modelContext: context),
             itemRepository: SwiftDataItemRepository(modelContext: context),
-            attachmentService: SupabaseAttachmentService(backend: backend, modelContext: context),
+            attachmentService: attachmentService,
             ocrService: VisionOCRService(),
             fieldParser: DefaultReceiptFieldParser(),
             subscriptionService: StoreKitSubscriptionService(),
             notificationScheduler: LocalNotificationScheduler(),
-            analyticsService: NoOpAnalyticsService()
+            analyticsService: NoOpAnalyticsService(),
+            syncEngine: SyncEngine(modelContext: context, backend: backend, attachmentService: attachmentService)
         )
     }
 
@@ -87,7 +92,8 @@ final class AppEnvironment {
             fieldParser: DefaultReceiptFieldParser(),
             subscriptionService: PreviewSubscriptionService(),
             notificationScheduler: PreviewNotificationScheduler(),
-            analyticsService: NoOpAnalyticsService()
+            analyticsService: NoOpAnalyticsService(),
+            syncEngine: nil
         )
     }
 }
