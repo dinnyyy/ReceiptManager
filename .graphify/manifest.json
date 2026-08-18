@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787044381737.3816,
-    "hash": "b1cf2f36d0f2cbb54cf9a536c830ede7"
+    "mtime": 1787044516797.3784,
+    "hash": "08890ea0aa0dc57bb037fd3d81cf56d1"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787044122869.3875,
-    "hash": "30886fba77070a9d8b369e018355e8cf"
+    "mtime": 1787044402057.381,
+    "hash": "3cc9161823fa9c40d70afb42e4a69a8d"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -332,12 +332,12 @@
     "hash": "f54af5def356bec87241785276c1d267"
   },
   "Core/Persistence/AttachmentRepository.swift": {
-    "mtime": 1787043997893.3904,
-    "hash": "9218cf625f881b818f1e37b0d1c5ec1f"
+    "mtime": 1787044483689.3792,
+    "hash": "c495c12c4c64748a27750fa05eb521ec"
   },
   "Core/Persistence/SwiftDataAttachmentRepository.swift": {
-    "mtime": 1787044005373.3901,
-    "hash": "7eb8bbb9285b885ce99d46af6857456b"
+    "mtime": 1787044488629.3792,
+    "hash": "fae1a17b6940f11fd45aebd6d3275596"
   },
   "Features/Capture/CaptureSourceSheet.swift": {
     "mtime": 1787043954909.3914,
@@ -394,5 +394,29 @@
   "Features/Vault/VaultViewModel.swift": {
     "mtime": 1787044344589.3826,
     "hash": "0690c37e75c35c4b3a4eb00c8f5163cf"
+  },
+  "Core/Notifications/LocalNotificationScheduler.swift": {
+    "mtime": 1787044423629.3806,
+    "hash": "7464736f0cbd8a5a44b5662f57362468"
+  },
+  "Features/Items/ItemDetailView.swift": {
+    "mtime": 1787044509233.3787,
+    "hash": "773097d2c7e8b1878a76c67eed87a573"
+  },
+  "Features/Items/ItemDetailViewModel.swift": {
+    "mtime": 1787044495421.379,
+    "hash": "1cc9091759b00f12115eb70cc044d60b"
+  },
+  "Features/Items/ItemEditView.swift": {
+    "mtime": 1787044470929.3796,
+    "hash": "0bf1830dc1969beff589c01cdc0d4280"
+  },
+  "Features/Items/ItemsView.swift": {
+    "mtime": 1787044443425.3801,
+    "hash": "ae764a0f303226f7f512e9105bfa15e9"
+  },
+  "Features/Items/ItemsViewModel.swift": {
+    "mtime": 1787044431429.3804,
+    "hash": "fbdf75659e35b517cd9740b5e08039e4"
   }
 }
