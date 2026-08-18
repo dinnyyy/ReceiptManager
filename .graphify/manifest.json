@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787043081605.4114,
-    "hash": "7030383db9a12e3dcc39abaab4a75498"
+    "mtime": 1787043643681.3984,
+    "hash": "bd973ed1b0d7fb9e8ff9c544ac8698a7"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787042572289.423,
-    "hash": "d2cf4529d61297c149bb044a40f802fd"
+    "mtime": 1787043101497.411,
+    "hash": "ef0828fab6c00b36d08737f66bb59687"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -174,5 +174,129 @@
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/WarrantyTests.swift": {
     "mtime": 1787043021717.4126,
     "hash": "cc78ce028f7afb00dd53849338e74b39"
+  },
+  "App/AppEnvironment+Workspace.swift": {
+    "mtime": 1787043588501.3997,
+    "hash": "447bdcb41975613c7138df403deb97d6"
+  },
+  "App/AppEnvironment.swift": {
+    "mtime": 1787043375825.4045,
+    "hash": "336430321e759a71937ae51e3ebd9ca1"
+  },
+  "App/AppRouter.swift": {
+    "mtime": 1787043401017.404,
+    "hash": "c6643ce620691498ac8bc850d2fea5c1"
+  },
+  "App/LaunchView.swift": {
+    "mtime": 1787043425573.4036,
+    "hash": "fe935b9839ec1543775bba4e60d83540"
+  },
+  "App/MainTabView.swift": {
+    "mtime": 1787043440829.403,
+    "hash": "cd11e25e75d1ed0dce61ba7f4c24a6fd"
+  },
+  "App/ReceiptVaultApp.swift": {
+    "mtime": 1787043194209.4087,
+    "hash": "a13579434f75d46ae1db72ef4513e717"
+  },
+  "App/RootView.swift": {
+    "mtime": 1787043421253.4036,
+    "hash": "e81ebddb773f87de90d96228add19e45"
+  },
+  "Core/Analytics/AnalyticsEvent.swift": {
+    "mtime": 1787043340473.4055,
+    "hash": "ebb86fb769ce4276e7f87168ca176915"
+  },
+  "Core/Auth/AppleSignInCoordinator.swift": {
+    "mtime": 1787043575429.4001,
+    "hash": "f7ef073b3020495d105e692f8f975609"
+  },
+  "Core/Auth/AuthService.swift": {
+    "mtime": 1787043290601.4065,
+    "hash": "6d71f8148d47b6bc7dd0b62d86bbb86a"
+  },
+  "Core/Auth/SupabaseAuthService.swift": {
+    "mtime": 1787043581201.4,
+    "hash": "cd2582dad1c1347387e29b5f11fbd5b9"
+  },
+  "Core/Backend/SupabaseBackend.swift": {
+    "mtime": 1787043554929.4006,
+    "hash": "84d451660a8e7c9d4b5877828672159a"
+  },
+  "Core/Backend/SupabaseConfig.swift": {
+    "mtime": 1787043543865.401,
+    "hash": "7bb863dbc0a45ea2c584dd43e8d5459f"
+  },
+  "Core/Notifications/NotificationScheduler.swift": {
+    "mtime": 1787043329593.4058,
+    "hash": "b2f3d6d5aca8859889f56ae52bcdd285"
+  },
+  "Core/OCR/OCRService.swift": {
+    "mtime": 1787043297061.4065,
+    "hash": "da1e680136340a49e1e9a6083e5759f2"
+  },
+  "Core/Persistence/ItemRepository.swift": {
+    "mtime": 1787043317609.406,
+    "hash": "562cbb436825573361d2e7df2350310f"
+  },
+  "Core/Persistence/PersistenceSchema.swift": {
+    "mtime": 1787043283053.4067,
+    "hash": "a982dbd530d1330b466a065cdb59ec65"
+  },
+  "Core/Persistence/PurchaseRepository.swift": {
+    "mtime": 1787043311585.406,
+    "hash": "cfd4842c8d0d54df48027a945172a5bd"
+  },
+  "Core/Preview/PreviewServices.swift": {
+    "mtime": 1787043389613.4043,
+    "hash": "15d17aa8baf3dd1c886774d9932be862"
+  },
+  "Core/Storage/AttachmentService.swift": {
+    "mtime": 1787043303717.4062,
+    "hash": "fe59101b87073513e45bdd5bd5aaa157"
+  },
+  "Core/Subscriptions/SubscriptionService.swift": {
+    "mtime": 1787043324725.4058,
+    "hash": "60fd7fb21a7e82719dc84d076b5656c4"
+  },
+  "Features/Onboarding/AuthView.swift": {
+    "mtime": 1787043635865.3987,
+    "hash": "0552b5fa97060bf3b2c88b96b429bf59"
+  },
+  "Features/Onboarding/OnboardingView.swift": {
+    "mtime": 1787043606933.3994,
+    "hash": "b425da688e6c98201a3373e3820d2e1a"
+  },
+  "Models/Persistence/AttachmentEntity.swift": {
+    "mtime": 1787043249129.4075,
+    "hash": "f303ed7afa2d7e7691dd397a6a308cca"
+  },
+  "Models/Persistence/FolderEntity.swift": {
+    "mtime": 1787043273329.407,
+    "hash": "4dbcae9d7b8ba6aa4a6762b83777f668"
+  },
+  "Models/Persistence/ItemEntity.swift": {
+    "mtime": 1787043240689.4077,
+    "hash": "ebdc3fe33aad84a6fe3b65dc59a1d49a"
+  },
+  "Models/Persistence/OutboxOperationEntity.swift": {
+    "mtime": 1787043267245.407,
+    "hash": "b39a591c8894d78e191c7ac4dfb278cb"
+  },
+  "Models/Persistence/PurchaseEntity.swift": {
+    "mtime": 1787043231757.408,
+    "hash": "d951c26dd3b37deb165bfd88ed21d745"
+  },
+  "Models/Persistence/TagEntity.swift": {
+    "mtime": 1787043276929.407,
+    "hash": "27817e268be35515e497e7ec2d1faa54"
+  },
+  "Models/Persistence/WarrantyEntity.swift": {
+    "mtime": 1787043256969.4072,
+    "hash": "aa0fb38f5605f3cbc447e1f4b3edc4f8"
+  },
+  "project.yml": {
+    "mtime": 1787043531681.4011,
+    "hash": "155f70f4f1f161b2d18cf6819afeefd6"
   }
 }
