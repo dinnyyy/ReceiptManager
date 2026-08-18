@@ -1,0 +1,34 @@
+# Xcode / Swift
+.build/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+!default.xcworkspace
+.swiftpm/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*
+*.xcconfig.local
+Config/Secrets.xcconfig
+
+# Supabase local dev
+supabase/.branches/
+supabase/.temp/
+
+# Node (graphify)
+node_modules/
+
+# Graphify local state (kept out of VCS; regenerate with `graphify update`)
+.graphify/cache/
+.graphify/*.log
