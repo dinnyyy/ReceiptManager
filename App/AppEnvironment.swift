@@ -17,6 +17,7 @@ final class AppEnvironment {
     let purchaseRepository: PurchaseRepository
     let itemRepository: ItemRepository
     let attachmentService: AttachmentService
+    let attachmentRepository: AttachmentRepository
     let ocrService: OCRService
     let fieldParser: ReceiptFieldParsing
     let subscriptionService: SubscriptionService
@@ -35,6 +36,7 @@ final class AppEnvironment {
         purchaseRepository: PurchaseRepository,
         itemRepository: ItemRepository,
         attachmentService: AttachmentService,
+        attachmentRepository: AttachmentRepository,
         ocrService: OCRService,
         fieldParser: ReceiptFieldParsing,
         subscriptionService: SubscriptionService,
@@ -47,6 +49,7 @@ final class AppEnvironment {
         self.purchaseRepository = purchaseRepository
         self.itemRepository = itemRepository
         self.attachmentService = attachmentService
+        self.attachmentRepository = attachmentRepository
         self.ocrService = ocrService
         self.fieldParser = fieldParser
         self.subscriptionService = subscriptionService
@@ -67,6 +70,7 @@ final class AppEnvironment {
             purchaseRepository: SwiftDataPurchaseRepository(modelContext: context),
             itemRepository: SwiftDataItemRepository(modelContext: context),
             attachmentService: attachmentService,
+            attachmentRepository: SwiftDataAttachmentRepository(modelContext: context),
             ocrService: VisionOCRService(),
             fieldParser: DefaultReceiptFieldParser(),
             subscriptionService: StoreKitSubscriptionService(),
@@ -88,6 +92,7 @@ final class AppEnvironment {
             purchaseRepository: SwiftDataPurchaseRepository(modelContext: context),
             itemRepository: SwiftDataItemRepository(modelContext: context),
             attachmentService: PreviewAttachmentService(),
+            attachmentRepository: SwiftDataAttachmentRepository(modelContext: context),
             ocrService: PreviewOCRService(),
             fieldParser: DefaultReceiptFieldParser(),
             subscriptionService: PreviewSubscriptionService(),

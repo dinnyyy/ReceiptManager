@@ -207,14 +207,14 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [x] Idempotent workspace bootstrap wired to `create_initial_workspace` RPC
 
 ### Capture → OCR → Review
-- [ ] Capture source sheet (camera/photo/file/manual)
-- [ ] VisionKit document scanner wrapper
-- [ ] PHPicker photo import
-- [ ] File importer (PDF/JPEG/PNG/HEIC)
-- [ ] Local draft creation (client UUID before any network work)
-- [ ] Vision OCR service (`OCRService` protocol + implementation)
-- [ ] Field parser wired to OCR output with confidence tiers
-- [ ] Review & Save screen (editable fields, purpose chips, notes)
+- [x] Capture source sheet (camera/photo/file/manual)
+- [x] VisionKit document scanner wrapper (`DocumentScannerView`)
+- [x] Photo import (SwiftUI `PhotosPicker`)
+- [x] File importer (PDF/JPEG/PNG/HEIC via `.fileImporter`)
+- [x] Local draft creation (client UUID before any network work - `CaptureDraft`)
+- [x] Vision OCR service (`VisionOCRService`: `VNRecognizeTextRequest`, PDF pages rendered via PDFKit first)
+- [x] Field parser wired to OCR output with confidence tiers (`ReviewViewModel`)
+- [x] Review & Save screen (editable fields, purpose chips, notes, duplicate warning, "add item details" prompt)
 
 ### Persistence & sync
 - [x] SwiftData models (Purchase/Item/Attachment/Warranty/Folder/Tag/Outbox)
