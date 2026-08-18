@@ -29,6 +29,11 @@ supabase/.temp/
 # Node (graphify)
 node_modules/
 
-# Graphify local state (kept out of VCS; regenerate with `graphify update`)
+# Graphify local/ephemeral state (kept out of VCS; regenerate with `graphify update`)
 .graphify/cache/
 .graphify/*.log
+.graphify/branch.json
+.graphify/worktree.json
+.graphify/needs_update
+.graphify/.graphify_*
+.graphify/20*/

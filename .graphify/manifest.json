@@ -1,10 +1,70 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787041052977.4578,
-    "hash": "8f672665d1c67994b969845f3bc57200"
+    "mtime": 1787042547909.4236,
+    "hash": "1ef22cd9e89eb6159b4497a931531bcf"
   },
   "README.md": {
-    "mtime": 1787040992757.4592,
-    "hash": "05775adf029b995084a148e9c51db766"
+    "mtime": 1787042234360.6619,
+    "hash": "58f3bc54d55c58e5e1365952d1f178fd"
+  },
+  "scripts/local_pg_stub.sql": {
+    "mtime": 1787042077941.4343,
+    "hash": "6b5aecee997085c010cda60356377e16"
+  },
+  "supabase/migrations/20260817000001_extensions.sql": {
+    "mtime": 1787042234360.6619,
+    "hash": "3db7e1b4461cbce20b987478768c4b04"
+  },
+  "supabase/migrations/20260817000002_core_tables.sql": {
+    "mtime": 1787041891949.4385,
+    "hash": "418c4a2462e61fa638edb227a17e645b"
+  },
+  "supabase/migrations/20260817000003_purchases.sql": {
+    "mtime": 1787041899113.4385,
+    "hash": "a37123bcaa0c33a7ca0572b58c4c798e"
+  },
+  "supabase/migrations/20260817000004_items_and_warranties.sql": {
+    "mtime": 1787041905785.4382,
+    "hash": "eb08963b71c08221737db87d07240747"
+  },
+  "supabase/migrations/20260817000005_attachments.sql": {
+    "mtime": 1787041910673.4382,
+    "hash": "0645bda328d6d75f5478d2bd3a34c53d"
+  },
+  "supabase/migrations/20260817000006_subscription_state.sql": {
+    "mtime": 1787041914377.438,
+    "hash": "53c1aeb099a00ff0314251914aa48817"
+  },
+  "supabase/migrations/20260817000007_search_indexes.sql": {
+    "mtime": 1787041921201.438,
+    "hash": "d545bf458821e2b2dcc7cc9b55f7f99f"
+  },
+  "supabase/migrations/20260817000008_updated_at_triggers.sql": {
+    "mtime": 1787041925901.4377,
+    "hash": "a749f594d44ba7dc03f3b7aa2433f9fd"
+  },
+  "supabase/migrations/20260817000009_rls.sql": {
+    "mtime": 1787042462869.4255,
+    "hash": "36f8f96d35ffc8f5195db4600f719b2e"
+  },
+  "supabase/migrations/20260817000010_rpc_functions.sql": {
+    "mtime": 1787042438777.426,
+    "hash": "b0d85fea87dc93658869f2a550c04c7c"
+  },
+  "supabase/migrations/20260817000011_storage.sql": {
+    "mtime": 1787042011501.4358,
+    "hash": "cd1434ce2267c3b84f0e30fb7973a5e3"
+  },
+  "supabase/seed/seed.sql": {
+    "mtime": 1787042540893.4238,
+    "hash": "b5526e1e012dccdeea26a3ea106c2736"
+  },
+  "supabase/tests/001_rls_isolation.sql": {
+    "mtime": 1787042522285.424,
+    "hash": "eb93284044249ef85ebcf7908401b746"
+  },
+  ".graphify/GRAPH_REPORT.md": {
+    "mtime": 1787042234360.6619,
+    "hash": "2ad6bd1b65b1b07dd091e4323c1471a5"
   }
 }

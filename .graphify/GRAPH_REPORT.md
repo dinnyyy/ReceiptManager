@@ -1,36 +1,39 @@
 # Graph Report - .  (2026-08-18)
 
 ## Corpus Check
-- Corpus is ~2,232 words - fits in a single context window. You may not need a graph.
+- Corpus is ~8,550 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 32 nodes · 19 edges · 17 communities detected
-- Extraction: 95% EXTRACTED · 0% INFERRED · 5% AMBIGUOUS
-- Token cost: 4,200 input · 3,600 output
-- Edge kinds: references: 15 · implements: 2 · calls: 1 · shares_data_with: 1
+- 72 nodes · 110 edges · 10 communities detected
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- Token cost: 0 input · 0 output
+- Edge kinds: contains: 48 · references: 27 · MODIFIES: 14 · reads_from: 10 · ON_BRANCH: 5 · PARENT_OF: 3 · triggers: 3
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 2 · Candidates: 5
-- Excluded: 11 untracked · 3 ignored · 0 sensitive · 0 missing committed
+- Included files: 17 · Candidates: 26
+- Excluded: 0 untracked · 3 ignored · 0 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
+
+## Graph Freshness
+- Built from Git commit: `d5ee20a`
+- Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
-1. `purchases table` - 5 edges
-2. `items table` - 3 edges
-3. `docs/viability-research.docx` - 2 edges
-4. `docs/ios-mvp-specification.docx` - 2 edges
-5. `Supabase (Postgres + Auth + Storage)` - 2 edges
-6. `workspaces table` - 2 edges
-7. `purchase_items table` - 2 edges
-8. `attachments table` - 2 edges
-9. `Packages/ReceiptVaultCore` - 2 edges
-10. `Apple Vision OCR (VNRecognizeTextRequest)` - 1 edges
+1. `public.delete_account_data()` - 6 edges
+2. `public.workspaces` - 5 edges
+3. `public.purchases` - 5 edges
+4. `public.create_initial_workspace()` - 5 edges
+5. `auth.users` - 4 edges
+6. `public.folders` - 4 edges
+7. `public.items` - 4 edges
+8. `public.attachments` - 4 edges
+9. `public.workspace_members` - 3 edges
+10. `public.purchase_tags` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Supabase CLI` --references--> `Supabase (Postgres + Auth + Storage)`  [EXTRACTED]
-  README.md → CLAUDE.md
+- None detected - all connections are within the same source files.
 
 ## Hyperedges (group relationships)
 - **Workspace-scoped RLS enforced across core tables** — workspaces_table, purchases_table, items_table, attachments_table [EXTRACTED 0.85]
@@ -39,117 +42,55 @@
 ## Communities
 
 ### Community 0 - "Core Purchase Schema"
-Cohesion: 0.33
-Nodes (7): attachments table, items table, purchase_items table, purchase_purposes table, purchases table, tags table, warranties table
+Cohesion: 0.18
+Nodes (6): claude/iphone-app-mvp-phase-1-p1std2, main, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, caf16db Add initial Receipt Manager research and spec docs, d5ee20a Add Supabase schema, RLS policies, and RPCs; verified against local Postgres, f10f37b Scaffold project: CLAUDE.md plan, README, repo layout, move source docs into docs/
 
 ### Community 1 - "Project Documentation"
+Cohesion: 0.40
+Nodes (8): public, public.attachments, public.create_initial_workspace(), public.delete_account_data(), public.profiles, public.workspace_members, public.workspaces, v_workspace
+
+### Community 2 - "Shared Business Logic"
+Cohesion: 0.31
+Nodes (6): items_touch_updated_at, public.items, public.purchases, public.warranties, purchases_set_updated_at, warranties_touch_updated_at
+
+### Community 3 - "Supabase Backend"
+Cohesion: 0.62
+Nodes (6): auth.users, public.folders, public.profiles, public.tags, public.workspace_members, public.workspaces
+
+### Community 4 - "On-device OCR"
+Cohesion: 0.52
+Nodes (6): public.folders, public.purchase_purposes, public.purchase_tags, public.purchases, public.tags, public.workspaces
+
+### Community 5 - "RLS Test Harness"
+Cohesion: 0.38
+Nodes (5): auth.users, pg_roles, storage.buckets, storage.foldername(), storage.objects
+
+### Community 6 - "Folder Hierarchy"
+Cohesion: 0.67
+Nodes (5): public.items, public.purchase_items, public.purchases, public.warranties, public.workspaces
+
+### Community 7 - "Graphify Tooling"
+Cohesion: 0.70
+Nodes (4): public.attachments, public.items, public.purchases, public.workspaces
+
+### Community 8 - "PDF Export"
 Cohesion: 0.83
 Nodes (2): docs/ios-mvp-specification.docx, docs/viability-research.docx
 
-### Community 2 - "Shared Business Logic"
-Cohesion: 0.67
-Nodes (3): CSV export (Foundation string generation), Throwaway Python prototype, Packages/ReceiptVaultCore
-
-### Community 3 - "Supabase Backend"
-Cohesion: 0.67
-Nodes (3): Supabase (Postgres + Auth + Storage), Supabase CLI, workspaces table
-
-### Community 4 - "On-device OCR"
-Cohesion: 1.00
-Nodes (2): Apple Vision OCR (VNRecognizeTextRequest), OCRService (protocol)
-
-### Community 5 - "RLS Test Harness"
-Cohesion: 1.00
-Nodes (2): scripts/db_test.sh, supabase/tests/*.sql
-
-### Community 6 - "Folder Hierarchy"
-Cohesion: 1.00
-Nodes (1): folders table
-
-### Community 7 - "Graphify Tooling"
-Cohesion: 1.00
-Nodes (1): Graphify
-
-### Community 8 - "PDF Export"
-Cohesion: 1.00
-Nodes (1): PDFKit
-
 ### Community 9 - "Apple Sign-In"
 Cohesion: 1.00
-Nodes (1): Sign in with Apple
-
-### Community 10 - "Subscriptions"
-Cohesion: 1.00
-Nodes (1): StoreKit 2
-
-### Community 11 - "Email OTP Auth"
-Cohesion: 1.00
-Nodes (1): Supabase email OTP
-
-### Community 12 - "Local Persistence"
-Cohesion: 1.00
-Nodes (1): SwiftData
-
-### Community 13 - "SwiftUI UI Layer"
-Cohesion: 1.00
-Nodes (1): SwiftUI
-
-### Community 14 - "Local Notifications"
-Cohesion: 1.00
-Nodes (1): UserNotifications (local only)
-
-### Community 15 - "Document Scanning"
-Cohesion: 1.00
-Nodes (1): VisionKit (VNDocumentCameraViewController)
-
-### Community 16 - "Xcode Project Generation"
-Cohesion: 1.00
-Nodes (1): XcodeGen
-
-## Ambiguous Edges - Review These
-- `tags table` → `purchases table`  [AMBIGUOUS]
-  CLAUDE.md · relation: references
+Nodes (2): auth.users, public.subscription_state
 
 ## Knowledge Gaps
-- **21 isolated node(s):** `SwiftUI`, `SwiftData`, `VisionKit (VNDocumentCameraViewController)`, `Apple Vision OCR (VNRecognizeTextRequest)`, `OCRService (protocol)` (+16 more)
+- **1 isolated node(s):** `auth.users`
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Project Documentation`** (2 nodes): `docs/ios-mvp-specification.docx`, `docs/viability-research.docx`
+- **Thin community `PDF Export`** (2 nodes): `docs/ios-mvp-specification.docx`, `docs/viability-research.docx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `On-device OCR`** (2 nodes): `Apple Vision OCR (VNRecognizeTextRequest)`, `OCRService (protocol)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `RLS Test Harness`** (2 nodes): `scripts/db_test.sh`, `supabase/tests/*.sql`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Folder Hierarchy`** (1 nodes): `folders table`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Graphify Tooling`** (1 nodes): `Graphify`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `PDF Export`** (1 nodes): `PDFKit`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Apple Sign-In`** (1 nodes): `Sign in with Apple`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Subscriptions`** (1 nodes): `StoreKit 2`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Email OTP Auth`** (1 nodes): `Supabase email OTP`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Local Persistence`** (1 nodes): `SwiftData`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `SwiftUI UI Layer`** (1 nodes): `SwiftUI`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Local Notifications`** (1 nodes): `UserNotifications (local only)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Document Scanning`** (1 nodes): `VisionKit (VNDocumentCameraViewController)`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Xcode Project Generation`** (1 nodes): `XcodeGen`
+- **Thin community `Apple Sign-In`** (2 nodes): `auth.users`, `public.subscription_state`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What is the exact relationship between `tags table` and `purchases table`?**
-  _Edge tagged AMBIGUOUS (relation: references) - confidence is low._
-- **Why does `purchases table` connect `Core Purchase Schema` to `Supabase Backend`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
-- **Why does `workspaces table` connect `Supabase Backend` to `Core Purchase Schema`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
-- **What connects `SwiftUI`, `SwiftData`, `VisionKit (VNDocumentCameraViewController)` to the rest of the system?**
-  _21 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `auth.users` to the rest of the system?**
+  _1 weakly-connected nodes found - possible documentation gaps or missing edges._

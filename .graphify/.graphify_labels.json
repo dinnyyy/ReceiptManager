@@ -1,1 +1,12 @@
-{"0":"Core Purchase Schema","1":"Project Documentation","2":"Shared Business Logic","3":"Supabase Backend","4":"On-device OCR","5":"RLS Test Harness","6":"Folder Hierarchy","7":"Graphify Tooling","8":"PDF Export","9":"Apple Sign-In","10":"Subscriptions","11":"Email OTP Auth","12":"Local Persistence","13":"SwiftUI UI Layer","14":"Local Notifications","15":"Document Scanning","16":"Xcode Project Generation"}
+{
+  "0": "Core Purchase Schema",
+  "1": "Project Documentation",
+  "2": "Shared Business Logic",
+  "3": "Supabase Backend",
+  "4": "On-device OCR",
+  "5": "RLS Test Harness",
+  "6": "Folder Hierarchy",
+  "7": "Graphify Tooling",
+  "8": "PDF Export",
+  "9": "Apple Sign-In"
+}
