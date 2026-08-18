@@ -12,8 +12,20 @@ decisions and build progress. Source research is in [`docs/`](docs).
 
 ## Status
 
-Early build. Not yet installable on a device - see the progress checklist
-in `CLAUDE.md` for what's implemented.
+The full V1 MVP feature set described in `docs/ios-mvp-specification.docx`
+is implemented in source: auth (Sign in with Apple + email OTP), capture
+(camera/photo/file/manual), on-device OCR + Review, local-first
+SwiftData persistence with a syncing outbox, Home/Vault/Purchase
+Detail/Items screens, warranty reminders, Tax/Warranty/Insurance/Generic
+Proof Pack export (PDF + CSV), StoreKit 2 subscriptions with a paywall,
+and Settings/account deletion. See `CLAUDE.md`'s progress checklist for
+the exact state and what's still a placeholder (app name/branding, prices,
+legal text, app icon).
+
+**Not yet done**: a real Xcode build. This was developed in a Linux
+sandbox with no Swift toolchain (see `CLAUDE.md` section 4) - the first
+`xcodegen generate` + build on a Mac is the first real compiler check the
+Swift code has had, and will likely need small fixes.
 
 ## Stack
 
@@ -42,13 +54,18 @@ docs/                   Source research & specification documents
 
 ## Getting started (on a Mac with Xcode)
 
-1. Install [XcodeGen](https://github.com/yonaskolb/XcodeGen): `brew install xcodegen`
-2. From the repo root: `xcodegen generate`
-3. Open `ReceiptVault.xcodeproj` and run on an iPhone 15+ simulator (see
-   `project.yml` for the minimum deployment target).
-4. Backend: install the [Supabase CLI](https://supabase.com/docs/guides/cli),
+1. Copy `Config/Secrets.xcconfig.template` to `Config/Secrets.xcconfig` and
+   fill in your Supabase project's URL and anon key (see the template's
+   comments - the anon key is safe to ship, RLS protects every table).
+2. Install [XcodeGen](https://github.com/yonaskolb/XcodeGen): `brew install xcodegen`
+3. From the repo root: `xcodegen generate`
+4. Open `ReceiptVault.xcodeproj` and run on an iPhone 15+ simulator (see
+   `project.yml` for the minimum deployment target). Fix whatever the
+   compiler flags first - see "Not yet done" above.
+5. Backend: install the [Supabase CLI](https://supabase.com/docs/guides/cli),
    run `supabase start`, then `supabase db reset` to apply
-   `supabase/migrations/`.
+   `supabase/migrations/`. Deploy `supabase/functions/delete-account` with
+   `supabase functions deploy delete-account` for account deletion to work.
 
 ## Testing
 

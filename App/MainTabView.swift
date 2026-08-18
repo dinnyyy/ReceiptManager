@@ -8,25 +8,31 @@ struct MainTabView: View {
 
     var body: some View {
         @Bindable var router = router
+        // Classic tag-based TabView, not the iOS 18-only `Tab(value:)`
+        // builder API, so this stays compatible with the iOS 17.0
+        // deployment target set in project.yml (SwiftData is the actual
+        // floor; see CLAUDE.md section 20 on the minimum-version decision).
         TabView(selection: $router.selectedTab) {
-            Tab("Home", systemImage: "house.fill", value: AppTab.home) {
-                NavigationStack(path: $router.homePath) {
-                    HomeView()
-                        .navigationDestination(for: AppRoute.self, destination: destination)
-                }
+            NavigationStack(path: $router.homePath) {
+                HomeView()
+                    .navigationDestination(for: AppRoute.self, destination: destination)
             }
-            Tab("Vault", systemImage: "archivebox.fill", value: AppTab.vault) {
-                NavigationStack(path: $router.vaultPath) {
-                    VaultView()
-                        .navigationDestination(for: AppRoute.self, destination: destination)
-                }
+            .tabItem { Label("Home", systemImage: "house.fill") }
+            .tag(AppTab.home)
+
+            NavigationStack(path: $router.vaultPath) {
+                VaultView()
+                    .navigationDestination(for: AppRoute.self, destination: destination)
             }
-            Tab("Items", systemImage: "shippingbox.fill", value: AppTab.items) {
-                NavigationStack(path: $router.itemsPath) {
-                    ItemsView()
-                        .navigationDestination(for: AppRoute.self, destination: destination)
-                }
+            .tabItem { Label("Vault", systemImage: "archivebox.fill") }
+            .tag(AppTab.vault)
+
+            NavigationStack(path: $router.itemsPath) {
+                ItemsView()
+                    .navigationDestination(for: AppRoute.self, destination: destination)
             }
+            .tabItem { Label("Items", systemImage: "shippingbox.fill") }
+            .tag(AppTab.items)
         }
         .sheet(isPresented: $router.isCaptureSheetPresented) {
             CaptureSourceSheet()

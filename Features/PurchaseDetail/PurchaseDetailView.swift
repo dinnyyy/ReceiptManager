@@ -81,6 +81,9 @@ struct PurchaseDetailView: View {
                                         expandedAttachmentID = attachment.id
                                     }
                                 }
+                                .accessibilityAddTraits(.isButton)
+                                .accessibilityLabel("\(attachment.type == .invoicePdf ? "Invoice" : "Receipt photo") \(attachment.originalFilename ?? "")")
+                                .accessibilityHint("Double tap to view full screen")
                             }
                         }
                     }

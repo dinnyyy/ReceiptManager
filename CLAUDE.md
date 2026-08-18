@@ -170,34 +170,48 @@ project). Initialize a fresh clone with `npx @sentropic/graphify .`.
 
 ## 4a. RESUME HERE if this session ended mid-work
 
-As of the most recent commit: **Tasks 1-11 are fully done** (backend,
-core logic, app shell, auth, capture/OCR/review, persistence/sync, and
-Home/Vault/PurchaseDetail/Items screens all exist and are wired together).
-**Task 12 (Export builder) is in progress** - the PDF/CSV renderer,
-`ExportFileWriter`, and `ExportBuilderView`/`ExportBuilderViewModel` are
-written, but the app will not be internally consistent yet because two
-things they (and `AppEnvironment.live()`) reference **do not exist yet**:
+**All 15 build tasks are done.** Every screen and service in the spec's
+P0 scope exists in source and is wired together (verified by a manual
+type-reference audit: every custom View/service type referenced from
+another file has exactly one definition - see git log for the
+"coherence check" commit). The codebase has never been compiled - there
+is no Xcode/Swift toolchain in the sandbox this was built in (section 4
+above). **The single most important next step for whoever picks this up
+is: open it in real Xcode and fix whatever the compiler finds.** Expect
+this to take real but bounded effort - the architecture and business
+logic are sound and tested where testable; what's unverified is Swift/
+SwiftUI/Supabase-SDK API surface details (exact method signatures,
+property names) that only a real compiler catches.
 
-- `PaywallView` (referenced by `ExportBuilderView` and `AppRouter`'s
-  `.sheet(item: $router.paywallTrigger)` in `MainTabView`) - build in Task 13.
-- `StoreKitSubscriptionService` (referenced by `AppEnvironment.live()`) -
-  build in Task 13.
+Concretely, in order:
+1. `cp Config/Secrets.xcconfig.template Config/Secrets.xcconfig` and fill
+   in a real (or throwaway dev) Supabase project's URL/anon key.
+2. `xcodegen generate`, open `ReceiptVault.xcodeproj`.
+3. Fix compiler errors file by file. Most likely spots, in rough order of
+   risk: `Core/Backend/SupabaseBackend.swift` (Supabase Swift SDK calls -
+   its header comment flags this explicitly), `Core/Subscriptions/
+   StoreKitSubscriptionService.swift` (StoreKit 2 API). `MainTabView.swift`
+   deliberately uses the classic tag-based `TabView`, not the iOS 18-only
+   `Tab(value:)` builder, to match the iOS 17.0 deployment target - if you
+   raise the minimum iOS version, that's a reasonable place to modernize.
+4. Run `supabase start` + `supabase db reset` locally (or point at a real
+   project) and smoke-test the signup -> scan -> save -> search -> export
+   flow end to end - this is the first time that flow will have executed
+   at all.
+5. Run the XCTest suites (`Packages/ReceiptVaultCore` first - it should
+   pass close to immediately since its logic was cross-validated in
+   Python; then `Tests/Unit`).
+6. Do a real VoiceOver + Dynamic Type pass on a device (see Quality
+   checklist below).
+7. Add the missing app icon image, decide the real app name/branding,
+   subscription prices, and legal text (section 6 below lists every
+   placeholder still outstanding).
 
-Task 13 also still needs `SettingsView` (referenced by `MainTabView`'s
-`.sheet(isPresented: $router.isSettingsPresented)`) from Task 14.
-
-**Next steps in order**: finish Task 13 (StoreKit 2 + PaywallView) → Task
-14 (SettingsView + account deletion + analytics event wiring, already
-defined in `Core/Analytics/AnalyticsEvent.swift`) → Task 15 (accessibility
-pass, XCTest files for the app-layer code, final `graphify update`).
-
-**Before writing more UI code**, grep for other custom enums that get
-compared with `==`/used in `Set`/used as a `Picker` `selection:` and make
-sure each one explicitly declares `Equatable`/`Hashable` - Swift does not
-reliably synthesize these without an explicit declaration, and this bit
-us once already (see the "Enumerations.swift ... Equatable, Hashable"
-commit). `grep -rn "^enum\|^public enum" --include=*.swift` from the repo
-root finds every enum to check.
+**When adding new enums**, declare `Equatable`/`Hashable` explicitly if
+they're compared with `==`, put in a `Set`, or used as a `Picker`
+`selection:` - Swift does not reliably synthesize these without an
+explicit declaration, and this cost real time once already (see the
+"fix enum conformance" commit in git log).
 
 ## 5. Progress checklist
 
@@ -283,10 +297,27 @@ aspirationally - the whole point is that a resuming session can trust it.
       `NoOpAnalyticsService` since spec 20 leaves the actual backend a founder decision.
 
 ### Quality
-- [ ] Accessibility pass (Dynamic Type, VoiceOver labels, non-colour-only status)
-- [ ] XCTest unit test files for UI-adjacent logic
-- [ ] XCTest integration test files (signup→workspace→save, RLS negative test, offline→sync)
-- [ ] First real Xcode build performed (update this doc with results)
+- [x] Accessibility pass: SwiftUI `Form`/`List` give Dynamic Type by default (no fixed-height
+      text containers were added); every icon-only button uses `Label` (VoiceOver reads the
+      text even though only the icon shows); sync/warranty/low-confidence states pair an
+      icon with text, never colour alone (spec 16.1); fixed a couple of gaps found on
+      review (`ItemsView`'s add button, `PurchaseDetailView`'s attachment thumbnails) -
+      **not verified with a real VoiceOver pass on a device**, which should happen before
+      TestFlight.
+- [x] ReceiptVaultCore XCTest suite: 12 files, thorough (see Foundation section above)
+- [x] One real SwiftData integration test file (`Tests/Unit/SwiftDataPurchaseRepositoryTests.swift`:
+      save/fetch round-trip, idempotent upsert, workspace isolation, purpose+text search,
+      draft exclusion, delete, sort)
+- [ ] Broader app-layer test coverage (ViewModels beyond the repository layer, the sync
+      engine's retry/backoff behaviour, RLS-negative-test-equivalent for the RPC-calling
+      code) - not written yet; the repository layer above is the highest-value piece that
+      was covered given time. A resuming session should prioritise SyncEngine and
+      ReviewViewModel next if continuing the test pass.
+- [ ] First real Xcode build performed (update this doc with results) - **this is the
+      single most important next step**. Expect small, mechanical fixes: Supabase Swift
+      SDK method signatures (flagged in `SupabaseBackend.swift`'s header comment),
+      possibly some SwiftUI API surface drift, and the missing 1024x1024 app icon image
+      (`Resources/Assets.xcassets/AppIcon.appiconset` has the slot but no image yet).
 
 ## 6. Writing conventions
 

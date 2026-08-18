@@ -54,7 +54,7 @@ struct ItemsView: View {
                 Button {
                     isCreatePresented = true
                 } label: {
-                    Image(systemName: "plus")
+                    Label("Add item", systemImage: "plus")
                 }
             }
         }
