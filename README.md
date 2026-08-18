@@ -1,7 +1,7 @@
-# Receipt Vault (working title — app has no final name yet)
+# Receipt Vault (working title - app has no final name yet)
 
-A native iPhone app that preserves proof of purchase — receipts, invoices and
-photos — and connects each purchase to why it matters: tax, warranty,
+A native iPhone app that preserves proof of purchase - receipts, invoices and
+photos - and connects each purchase to why it matters: tax, warranty,
 insurance or asset records. Built for Australian sole traders and small
 (1–5 person) equipment-owning businesses.
 
@@ -12,7 +12,7 @@ decisions and build progress. Source research is in [`docs/`](docs).
 
 ## Status
 
-Early build. Not yet installable on a device — see the progress checklist
+Early build. Not yet installable on a device - see the progress checklist
 in `CLAUDE.md` for what's implemented.
 
 ## Stack
@@ -52,14 +52,14 @@ docs/                   Source research & specification documents
 
 ## Testing
 
-- **Swift unit tests**: `Packages/ReceiptVaultCore` and `Tests/Unit` — run
+- **Swift unit tests**: `Packages/ReceiptVaultCore` and `Tests/Unit` - run
   via Xcode/`swift test`. This dev environment has no Swift toolchain, so
   these have not been executed here; see `CLAUDE.md` for what has and
   hasn't been verified.
 - **Database/RLS tests**: `supabase/tests/*.sql`, runnable against any
-  Postgres instance — `scripts/db_test.sh` runs them locally and was used
+  Postgres instance - `scripts/db_test.sh` runs them locally and was used
   during development.
 
 ## License
 
-Proprietary — all rights reserved (placeholder until a license is decided).
+Proprietary - all rights reserved (placeholder until a license is decided).

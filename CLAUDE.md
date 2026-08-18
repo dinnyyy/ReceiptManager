@@ -1,4 +1,4 @@
-# CLAUDE.md — Receipt Vault (working title)
+# CLAUDE.md - Receipt Vault (working title)
 
 This file is the onboarding doc for any future session (human or Claude)
 picking this project back up. Read this before touching code.
@@ -9,14 +9,14 @@ A **native iPhone app** that lets Australian sole traders and 1–5 person
 equipment-owning microbusinesses (tradies, photographers, IT contractors,
 creative studios) scan or import a receipt/invoice once and keep the proof
 for every reason it might matter later: **tax, warranty, insurance, or
-asset records** — without re-filing the same purchase multiple times.
+asset records** - without re-filing the same purchase multiple times.
 
 Core promise: **"Scan once. Keep the proof for everything."**
 
 Full source documents are in `docs/`:
-- `docs/viability-research.docx` — market/competitor research and strategic
+- `docs/viability-research.docx` - market/competitor research and strategic
   reasoning (read this for *why*).
-- `docs/ios-mvp-specification.docx` — the buildable technical spec (read
+- `docs/ios-mvp-specification.docx` - the buildable technical spec (read
   this for *what*, screen by screen).
 
 ### Why this shape, not a generic receipt scanner
@@ -35,7 +35,7 @@ The gap that scored highest (7/10, the report's top recommendation) sits
   understand *the item*.
 - **This app understands that they're the same purchase.**
 
-So the central object is not a receipt — it's a **Purchase**, which can
+So the central object is not a receipt - it's a **Purchase**, which can
 simultaneously be tagged Tax + Warranty + Insurance + Asset, and can
 optionally link to an **Item** carrying brand/model/serial/location/warranty.
 One capture, many downstream uses. That's the whole product thesis; don't
@@ -57,7 +57,7 @@ warrantied item, and potentially an insurance claim), which is why the
 multi-purpose data model matters more for this persona than for someone
 just saving supermarket receipts.
 
-### Language rules (from the research — don't undo this positioning)
+### Language rules (from the research - don't undo this positioning)
 
 Never market: "AI-powered" as the headline, "automatically tax deductible",
 "ATO compliant" (unless legally verified), "guaranteed" warranty/insurance
@@ -79,7 +79,7 @@ tracked as post-M7 stretch goals below, not blockers.
 
 One-page acceptance bar (spec section 26): a beta user can scan a real
 purchase, trust the saved evidence, find it weeks later, and generate a
-useful Proof Pack — without it feeling like accounting software.
+useful Proof Pack - without it feeling like accounting software.
 
 ## 3. Architecture decisions
 
@@ -92,10 +92,10 @@ useful Proof Pack — without it feeling like accounting software.
 | OCR | Apple Vision (`VNRecognizeTextRequest`), on-device | No cloud dependency/cost for ordinary printed receipts; kept behind `OCRService` so a cloud fallback can be added later (spec 6.2, 6.3) |
 | Backend | Supabase (Postgres + Auth + Storage) | Relational purchase/item/warranty model, private object storage, RLS, Swift client support |
 | Auth | Sign in with Apple (primary) + Supabase email OTP (secondary) | No password handling |
-| Subscriptions | StoreKit 2 — Free + Solo Pro (monthly/annual) | Native entitlement flow; Personal/Small Business tiers stay server-configured, not shipped in V1 UI |
+| Subscriptions | StoreKit 2 - Free + Solo Pro (monthly/annual) | Native entitlement flow; Personal/Small Business tiers stay server-configured, not shipped in V1 UI |
 | Exports | PDFKit + CSV (Foundation string generation) | Word/DOCX explicitly out of scope |
 | Notifications | `UserNotifications`, local only | Warranty expiry reminders, scheduled on-device |
-| Money | `Decimal` in Swift / `numeric(12,2)` in Postgres | **Never `Double` for money** — spec 5.7, 7 |
+| Money | `Decimal` in Swift / `numeric(12,2)` in Postgres | **Never `Double` for money** - spec 5.7, 7 |
 | Dates | Purchase/warranty dates are date-only; timestamps are UTC | Avoids timezone drift on financial-year boundaries |
 | IDs | Client-generated UUIDs for every business object | Enables offline capture + idempotent upsert sync |
 
@@ -113,7 +113,7 @@ SELECT/INSERT/UPDATE/DELETE. **The client never holds a service-role key.**
 
 Local-first: capture → SwiftData draft (client UUID) → enqueue outbox →
 upload attachment (idempotent, deterministic storage path) → upsert
-purchase row (client UUID, `updated_at` for now-simple conflict handling —
+purchase row (client UUID, `updated_at` for now-simple conflict handling -
 V1 assumes single active device, last-write-wins is acceptable per spec
 9.4). A record's sync state (`localOnly` / `pendingUpload` / `syncing` /
 `synced` / `failed`) is always visible in the UI; failure never hides or
@@ -127,11 +127,11 @@ math, date parsing, merchant/total/GST candidate scoring, CSV escaping,
 duplicate-detection scoring, sync state machine, entitlement rules) so it
 can be unit-tested in isolation from the UI layer.
 
-## 4. Development environment notes (important — read before assuming CI/test state)
+## 4. Development environment notes (important - read before assuming CI/test state)
 
 This project has, at various points, been developed inside a **Linux
 container with no Xcode, no iOS Simulator, and no Swift toolchain**
-(`download.swift.org` is blocked by the sandbox's network policy — only
+(`download.swift.org` is blocked by the sandbox's network policy - only
 npm/PyPI/crates-style registries are reachable). That means Swift/SwiftUI
 code written in that environment **could not be compiled or run there**.
 
@@ -171,7 +171,7 @@ project). Initialize a fresh clone with `npx @sentropic/graphify .`.
 ## 5. Progress checklist
 
 Update this section as you go. Check items only when actually done, not
-aspirationally — the whole point is that a resuming session can trust it.
+aspirationally - the whole point is that a resuming session can trust it.
 
 ### Foundation
 - [ ] Repo scaffolding (dirs, README, this file, .gitignore)
@@ -238,15 +238,21 @@ aspirationally — the whole point is that a resuming session can trust it.
 - [ ] XCTest integration test files (signup→workspace→save, RLS negative test, offline→sync)
 - [ ] First real Xcode build performed (update this doc with results)
 
-## 6. Decisions deliberately left as placeholders (need founder/legal input before App Store submission)
+## 6. Writing conventions
 
-Per spec section 20 — do not silently invent these, they're configuration:
+- **Never use em dashes (—) anywhere**: not in code comments, commit
+  messages, docs, or UI copy. Use a hyphen, colon, or a new sentence
+  instead.
+
+## 7. Decisions deliberately left as placeholders (need founder/legal input before App Store submission)
+
+Per spec section 20 - do not silently invent these, they're configuration:
 - Final app name/branding (currently unnamed; "Receipt Vault" used as a
   working codename in docs/comments only)
-- Minimum iOS version (tied to whichever Xcode/SDK actually builds this —
+- Minimum iOS version (tied to whichever Xcode/SDK actually builds this  - 
   decide when you have Xcode)
 - Free-tier purchase limit (spec assumes 40, server-configurable)
 - Exact subscription prices (research suggests ~A$7.99–9.99/mo Solo Pro,
-  ~A$79/yr annual — must be set in App Store Connect, not hard-coded)
+  ~A$79/yr annual - must be set in App Store Connect, not hard-coded)
 - Support email/URL, Privacy Policy, Terms text
 - Data hosting region (prefer Australian region where practical)
