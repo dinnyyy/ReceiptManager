@@ -17,7 +17,7 @@ public enum AnalyticsEvent: Sendable {
     case subscriptionStarted(productID: String, offerType: String)
     case syncFailed(operation: String, genericErrorCode: String)
 
-    public enum CaptureSource: String, Sendable {
+    public enum CaptureSource: String, Sendable, Equatable, Hashable {
         case camera, photo, pdf, manual
     }
 }

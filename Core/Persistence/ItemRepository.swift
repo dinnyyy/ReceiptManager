@@ -1,7 +1,7 @@
 import Foundation
 import ReceiptVaultCore
 
-public enum ItemSort: Sendable {
+public enum ItemSort: Sendable, Equatable, Hashable {
     case nameAZ, warrantyEndingSoon, recentlyAdded
 }
 

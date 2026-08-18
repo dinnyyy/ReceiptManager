@@ -168,6 +168,37 @@ queryable knowledge graph of the codebase. Run `graphify update` after
 meaningful commits (already wired into the workflow used to build this
 project). Initialize a fresh clone with `npx @sentropic/graphify .`.
 
+## 4a. RESUME HERE if this session ended mid-work
+
+As of the most recent commit: **Tasks 1-11 are fully done** (backend,
+core logic, app shell, auth, capture/OCR/review, persistence/sync, and
+Home/Vault/PurchaseDetail/Items screens all exist and are wired together).
+**Task 12 (Export builder) is in progress** - the PDF/CSV renderer,
+`ExportFileWriter`, and `ExportBuilderView`/`ExportBuilderViewModel` are
+written, but the app will not be internally consistent yet because two
+things they (and `AppEnvironment.live()`) reference **do not exist yet**:
+
+- `PaywallView` (referenced by `ExportBuilderView` and `AppRouter`'s
+  `.sheet(item: $router.paywallTrigger)` in `MainTabView`) - build in Task 13.
+- `StoreKitSubscriptionService` (referenced by `AppEnvironment.live()`) -
+  build in Task 13.
+
+Task 13 also still needs `SettingsView` (referenced by `MainTabView`'s
+`.sheet(isPresented: $router.isSettingsPresented)`) from Task 14.
+
+**Next steps in order**: finish Task 13 (StoreKit 2 + PaywallView) → Task
+14 (SettingsView + account deletion + analytics event wiring, already
+defined in `Core/Analytics/AnalyticsEvent.swift`) → Task 15 (accessibility
+pass, XCTest files for the app-layer code, final `graphify update`).
+
+**Before writing more UI code**, grep for other custom enums that get
+compared with `==`/used in `Set`/used as a `Picker` `selection:` and make
+sure each one explicitly declares `Equatable`/`Hashable` - Swift does not
+reliably synthesize these without an explicit declaration, and this bit
+us once already (see the "Enumerations.swift ... Equatable, Hashable"
+commit). `grep -rn "^enum\|^public enum" --include=*.swift` from the repo
+root finds every enum to check.
+
 ## 5. Progress checklist
 
 Update this section as you go. Check items only when actually done, not
@@ -232,9 +263,12 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [x] Warranty fields + local notification scheduling (30d/7d, `LocalNotificationScheduler`, permission requested lazily)
 
 ### Export
-- [ ] Shared Proof Pack PDF renderer (Tax/Warranty/Insurance)
-- [ ] Tax CSV export
-- [ ] Share sheet integration
+- [x] Shared Proof Pack PDF renderer (Tax/Warranty/Insurance/Generic all share
+      one renderer + `PDFPageComposer` layout helper, per spec 19.1)
+- [x] Tax CSV export (`TaxCSVBuilder`, wired into `ExportBuilderViewModel`)
+- [x] Share sheet integration (`ShareLink`)
+- [x] `ExportBuilderView`/`ViewModel` (pack type picker, include-toggles, entitlement-gated)
+- [ ] `PaywallView` it opens on a free-tier export attempt does not exist yet (Task 13)
 
 ### Monetisation & settings
 - [ ] StoreKit 2 products (Free / Solo Pro monthly / annual)

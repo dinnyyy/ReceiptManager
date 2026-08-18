@@ -2,7 +2,7 @@ import Foundation
 
 /// Mirrors the `purchases.status` check constraint in
 /// supabase/migrations/20260817000003_purchases.sql.
-public enum PurchaseStatus: String, Codable, CaseIterable, Sendable {
+public enum PurchaseStatus: String, Codable, CaseIterable, Sendable, Equatable, Hashable {
     case draft
     case needsReview = "needs_review"
     case saved
@@ -12,7 +12,7 @@ public enum PurchaseStatus: String, Codable, CaseIterable, Sendable {
 /// Mirrors `purchase_purposes.purpose`. A purchase can carry more than one
 /// (spec 2.1, 5.7): "one purchase to serve multiple purposes without
 /// duplicate copies" is the core product thesis.
-public enum PurchasePurpose: String, Codable, CaseIterable, Sendable {
+public enum PurchasePurpose: String, Codable, CaseIterable, Sendable, Equatable, Hashable {
     case tax
     case warranty
     case insurance
@@ -37,7 +37,7 @@ public enum PurchasePurpose: String, Codable, CaseIterable, Sendable {
 }
 
 /// Mirrors `attachments.type`.
-public enum AttachmentType: String, Codable, CaseIterable, Sendable {
+public enum AttachmentType: String, Codable, CaseIterable, Sendable, Equatable, Hashable {
     case receiptImage = "receipt_image"
     case invoicePdf = "invoice_pdf"
     case itemPhoto = "item_photo"
@@ -50,7 +50,7 @@ public enum AttachmentType: String, Codable, CaseIterable, Sendable {
 
 /// Mirrors `workspaces.type`. V1 only ever creates `.personal` workspaces
 /// (spec 7.1): team workspaces are schema-ready but hidden from the UI.
-public enum WorkspaceType: String, Codable, CaseIterable, Sendable {
+public enum WorkspaceType: String, Codable, CaseIterable, Sendable, Equatable, Hashable {
     case personal
     case business
 }
@@ -58,7 +58,7 @@ public enum WorkspaceType: String, Codable, CaseIterable, Sendable {
 /// Local-only: never persisted to Postgres. Tracks where a record is in the
 /// local-first sync pipeline (spec 9.4) so the UI can always show whether a
 /// capture is safely backed up.
-public enum SyncState: String, Codable, CaseIterable, Sendable {
+public enum SyncState: String, Codable, CaseIterable, Sendable, Equatable, Hashable {
     case localOnly
     case pendingUpload
     case syncing
@@ -67,7 +67,7 @@ public enum SyncState: String, Codable, CaseIterable, Sendable {
 }
 
 /// Mirrors `subscription_state.plan`.
-public enum SubscriptionPlan: String, Codable, CaseIterable, Sendable {
+public enum SubscriptionPlan: String, Codable, CaseIterable, Sendable, Equatable, Hashable {
     case free
     case soloProMonthly = "solo_pro_monthly"
     case soloProAnnual = "solo_pro_annual"
@@ -78,7 +78,7 @@ public enum SubscriptionPlan: String, Codable, CaseIterable, Sendable {
 /// Derived, not stored: computed from a warranty's expiry date against
 /// "today" (spec 5.11: "warranty status derived from expiry date and
 /// current date").
-public enum WarrantyStatus: String, Sendable {
+public enum WarrantyStatus: String, Sendable, Equatable, Hashable {
     case none
     case active
     case expiringSoon

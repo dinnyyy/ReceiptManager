@@ -31,7 +31,7 @@ public struct PurchaseSearchQuery: Sendable {
     }
 }
 
-public enum PurchaseSort: Sendable {
+public enum PurchaseSort: Sendable, Equatable, Hashable {
     case newest, oldest, amountHighToLow, amountLowToHigh, merchantAZ
 }
 

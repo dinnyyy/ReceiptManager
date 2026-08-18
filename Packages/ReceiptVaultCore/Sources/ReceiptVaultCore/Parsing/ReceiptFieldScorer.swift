@@ -4,7 +4,7 @@ import Foundation
 /// field-specific, not one global AI confidence"). High: prefill normally.
 /// Medium: prefill with a subtle "check this" indicator. Low: leave blank
 /// or visibly flag.
-public enum FieldConfidence: Sendable {
+public enum FieldConfidence: Sendable, Equatable {
     case high
     case medium
     case low
