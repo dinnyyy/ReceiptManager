@@ -201,60 +201,6 @@ private struct LowConfidenceHint: View {
     }
 }
 
-private struct PurposeChipGrid: View {
-    @Binding var selected: Set<PurchasePurpose>
-
-    private let columns = [GridItem(.adaptive(minimum: 100), spacing: 8)]
-
-    var body: some View {
-        LazyVGrid(columns: columns, alignment: .leading, spacing: 8) {
-            ForEach(PurchasePurpose.allCases, id: \.self) { purpose in
-                let isSelected = selected.contains(purpose)
-                Button {
-                    if isSelected { selected.remove(purpose) } else { selected.insert(purpose) }
-                } label: {
-                    Text(purpose.displayName)
-                        .font(.subheadline)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 6)
-                        .background(isSelected ? Color.accentColor : Color(.secondarySystemBackground))
-                        .foregroundStyle(isSelected ? Color.white : Color.primary)
-                        .clipShape(Capsule())
-                        .overlay(
-                            Capsule().strokeBorder(isSelected ? Color.clear : Color(.separator), lineWidth: 1)
-                        )
-                }
-                .buttonStyle(.plain)
-                .accessibilityAddTraits(isSelected ? [.isSelected] : [])
-            }
-        }
-        .padding(.vertical, 4)
-    }
-}
-
-private struct ZoomableImageView: View {
-    let image: UIImage
-    @State private var scale: CGFloat = 1
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        NavigationStack {
-            ScrollView([.horizontal, .vertical]) {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .scaleEffect(scale)
-                    .gesture(MagnificationGesture().onChanged { scale = max(1, $0) })
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { dismiss() }
-                }
-            }
-        }
-    }
-}
-
 #Preview {
     ReviewView(draft: .manual(), onFinished: {})
         .environment(AppEnvironment.preview())

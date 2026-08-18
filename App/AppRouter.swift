@@ -1,5 +1,6 @@
 import SwiftUI
 import Foundation
+import ReceiptVaultCore
 
 /// Spec 4.1 navigation: three tabs (Home, Vault, Items), a persistent Scan
 /// button, and a Settings entry point - "the app should feel like a vault,
@@ -34,6 +35,12 @@ final class AppRouter {
     var isCaptureSheetPresented = false
     var isSettingsPresented = false
     var paywallTrigger: PaywallTrigger?
+
+    /// Set by Home's Inbox card, read (and cleared) by VaultView on
+    /// appear - a one-shot request to jump straight to a filtered Vault
+    /// view rather than shared persistent filter state (spec 5.3: "Tap
+    /// Inbox -> filtered Vault list status=needs_review").
+    var vaultStatusFilterRequest: PurchaseStatus?
 
     func navigate(to route: AppRoute, in tab: AppTab? = nil) {
         let target = tab ?? selectedTab

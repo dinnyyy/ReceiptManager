@@ -224,9 +224,9 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [ ] Sync-state UI indicators (wired into screens as each screen is built)
 
 ### Retrieval
-- [ ] Home tab (scan CTA, inbox, recent, warranty-ending-soon)
-- [ ] Purchase Detail screen
-- [ ] Vault tab (search, filters, sort, multi-select)
+- [x] Home tab (scan CTA, inbox, recent, warranty-ending-soon, empty state, pull-to-refresh)
+- [x] Purchase Detail screen (evidence carousel, edit, add attachment, export, delete with confirmation)
+- [x] Vault tab (search debounced, purpose/FY/status filter chips, sort, multi-select + export, no-results reset)
 - [ ] Items tab (list, detail, linked purchases)
 - [ ] Item create/edit (brand/model/serial/location/photos)
 - [ ] Warranty fields + local notification scheduling (30d/7d)
