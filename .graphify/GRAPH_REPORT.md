@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-08-18)
 
 ## Corpus Check
-- Corpus is ~33,324 words - fits in a single context window. You may not need a graph.
+- Corpus is ~37,051 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 85 nodes · 136 edges · 10 communities detected
+- 88 nodes · 142 edges · 10 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 48 · references: 27 · ON_BRANCH: 18 · PARENT_OF: 16 · MODIFIES: 14 · reads_from: 10 · triggers: 3
+- Edge kinds: contains: 48 · references: 27 · ON_BRANCH: 21 · PARENT_OF: 19 · MODIFIES: 14 · reads_from: 10 · triggers: 3
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 105 · Candidates: 118
+- Included files: 113 · Candidates: 126
 - Excluded: 0 untracked · 21 ignored · 1 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `b4049cf`
+- Built from Git commit: `cba5df2`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `public.delete_account_data()` - 6 edges
@@ -43,8 +43,8 @@
 ## Communities
 
 ### Community 0 - "Core Purchase Schema"
-Cohesion: 0.19
-Nodes (18): claude/iphone-app-mvp-phase-1-p1std2, main, 0db04cc Add Home, Purchase Detail, and Vault screens, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 884db08 graphify update: index Home/PurchaseDetail/Vault, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, 9c27588 Add Sign in with Apple, Supabase email OTP, and workspace bootstrap (+10 more)
+Cohesion: 0.16
+Nodes (21): claude/iphone-app-mvp-phase-1-p1std2, main, 0db04cc Add Home, Purchase Detail, and Vault screens, 1bf43bd Add export builder (shared PDF renderer, CSV, share sheet); fix enum conformance, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 884db08 graphify update: index Home/PurchaseDetail/Vault, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md (+13 more)
 
 ### Community 1 - "Project Documentation"
 Cohesion: 0.20

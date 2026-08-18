@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787044516797.3784,
-    "hash": "08890ea0aa0dc57bb037fd3d81cf56d1"
+    "mtime": 1787044909397.3696,
+    "hash": "250ab7e27ddd9c49c866edcb84737478"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787044402057.381,
-    "hash": "3cc9161823fa9c40d70afb42e4a69a8d"
+    "mtime": 1787044537197.378,
+    "hash": "d7ea0d02c592d12534ee3f1136a37308"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -80,8 +80,8 @@
     "hash": "5d4c11c99703f96ac7062e7f39657434"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Enumerations.swift": {
-    "mtime": 1787042726865.4194,
-    "hash": "3f75d9ff3f8828bc3b37e00a775250f3"
+    "mtime": 1787044755401.373,
+    "hash": "601acd216fa1488514d1530f55118d42"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Item.swift": {
     "mtime": 1787042848417.4167,
@@ -120,8 +120,8 @@
     "hash": "51f06cd54359c1d95bc8f9f5d4c1af36"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Parsing/ReceiptFieldScorer.swift": {
-    "mtime": 1787042783629.4182,
-    "hash": "97d1c64178c094397e7241f51b064c63"
+    "mtime": 1787044759425.373,
+    "hash": "6adb9963115f04aacb70b4be5fb0e352"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Sync/SyncStateMachine.swift": {
     "mtime": 1787042821181.4172,
@@ -204,8 +204,8 @@
     "hash": "e81ebddb773f87de90d96228add19e45"
   },
   "Core/Analytics/AnalyticsEvent.swift": {
-    "mtime": 1787043340473.4055,
-    "hash": "ebb86fb769ce4276e7f87168ca176915"
+    "mtime": 1787044770865.3728,
+    "hash": "a78cc674cf0f789a508e3788612f3b48"
   },
   "Core/Auth/AppleSignInCoordinator.swift": {
     "mtime": 1787043575429.4001,
@@ -236,16 +236,16 @@
     "hash": "da1e680136340a49e1e9a6083e5759f2"
   },
   "Core/Persistence/ItemRepository.swift": {
-    "mtime": 1787043317609.406,
-    "hash": "562cbb436825573361d2e7df2350310f"
+    "mtime": 1787044767113.3728,
+    "hash": "937dbfe78817d81d835083d6e3328c0d"
   },
   "Core/Persistence/PersistenceSchema.swift": {
     "mtime": 1787043283053.4067,
     "hash": "a982dbd530d1330b466a065cdb59ec65"
   },
   "Core/Persistence/PurchaseRepository.swift": {
-    "mtime": 1787043311585.406,
-    "hash": "cfd4842c8d0d54df48027a945172a5bd"
+    "mtime": 1787044763469.3728,
+    "hash": "943a329354dd459345544fba6e952713"
   },
   "Core/Preview/PreviewServices.swift": {
     "mtime": 1787043389613.4043,
@@ -344,12 +344,12 @@
     "hash": "338882eebeb1d0b6955a8df45a91e572"
   },
   "Features/PurchaseReview/ReviewView.swift": {
-    "mtime": 1787044231089.385,
-    "hash": "09c702b20a7e7624a9ae72184b01c9f6"
+    "mtime": 1787044902917.3696,
+    "hash": "96347368e2d17b46019ea6777784dcd3"
   },
   "Features/PurchaseReview/ReviewViewModel.swift": {
-    "mtime": 1787044049629.3892,
-    "hash": "80b5fa1ac59319391ba1210309c59eb4"
+    "mtime": 1787044894961.3699,
+    "hash": "511d9cd83606ba315148693c99f1db76"
   },
   "Features/Home/HomeView.swift": {
     "mtime": 1787044187249.386,
@@ -418,5 +418,37 @@
   "Features/Items/ItemsViewModel.swift": {
     "mtime": 1787044431429.3804,
     "hash": "fbdf75659e35b517cd9740b5e08039e4"
+  },
+  "Core/Exports/ExportFileWriter.swift": {
+    "mtime": 1787044655221.3752,
+    "hash": "51b65e267e3bd798e594272cca02f489"
+  },
+  "Core/Exports/PDFPageComposer.swift": {
+    "mtime": 1787044584509.377,
+    "hash": "303dbcd63c0d65186c06712eafd17ae2"
+  },
+  "Core/Exports/ProofPackPDFRenderer.swift": {
+    "mtime": 1787044615165.3762,
+    "hash": "2b97bbadf1534f9e506cfe7a66504530"
+  },
+  "Core/Exports/ProofPackType.swift": {
+    "mtime": 1787044774469.3726,
+    "hash": "c68ccd0d8f418566efa0802406c69562"
+  },
+  "Core/Subscriptions/StoreKitSubscriptionService.swift": {
+    "mtime": 1787044869133.3704,
+    "hash": "eada868e459553df13093355a573e2bf"
+  },
+  "Features/Exports/ExportBuilderView.swift": {
+    "mtime": 1787044668649.375,
+    "hash": "931ae6cf7a6769a40a6e6844f66e5d20"
+  },
+  "Features/Exports/ExportBuilderViewModel.swift": {
+    "mtime": 1787044644929.3755,
+    "hash": "9fb4a5d7d759305a37caf08eb002a648"
+  },
+  "Features/Paywall/PaywallView.swift": {
+    "mtime": 1787044885153.37,
+    "hash": "3ffd1b69256dc967b718c0860c7458a9"
   }
 }
