@@ -275,7 +275,9 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [x] Paywall screen + entitlement gating at free limit (`PaywallView`, wired into
       `ReviewViewModel.save()` and `ExportBuilderViewModel.generate()`)
 - [x] Restore purchases
-- [ ] Settings screen (profile, storage, export-all, delete account)
+- [x] Settings screen (profile, storage, export-all always allowed regardless of plan,
+      delete account with a Supabase Edge Function + type-to-confirm, sign out,
+      notification status + deep link to system Settings)
 - [x] Analytics event *types* defined with redaction-safe payloads (`AnalyticsEvent`);
       call sites wired for capture/save/search/export/paywall/subscription. Still using
       `NoOpAnalyticsService` since spec 20 leaves the actual backend a founder decision.

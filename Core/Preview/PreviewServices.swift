@@ -13,6 +13,7 @@ final class PreviewAuthService: AuthService {
     func requestEmailOTP(email: String) async throws {}
     func verifyEmailOTP(email: String, code: String) async throws -> AuthSession { currentSession! }
     func signOut() async { currentSession = nil }
+    func deleteAccount() async throws { currentSession = nil }
 }
 
 final class PreviewAttachmentService: AttachmentService {

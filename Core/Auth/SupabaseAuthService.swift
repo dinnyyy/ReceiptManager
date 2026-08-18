@@ -45,6 +45,11 @@ final class SupabaseAuthService: AuthService {
         currentSession = nil
     }
 
+    func deleteAccount() async throws {
+        try await backend.deleteAccount()
+        currentSession = nil
+    }
+
     private static func map(_ session: Session) -> AuthSession {
         AuthSession(userID: session.user.id, email: session.user.email)
     }

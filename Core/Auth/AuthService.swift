@@ -33,4 +33,5 @@ public protocol AuthService: AnyObject {
     func requestEmailOTP(email: String) async throws
     func verifyEmailOTP(email: String, code: String) async throws -> AuthSession
     func signOut() async
+    func deleteAccount() async throws
 }

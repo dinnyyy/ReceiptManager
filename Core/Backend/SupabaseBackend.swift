@@ -45,6 +45,15 @@ final class SupabaseBackend: Sendable {
         try await client.auth.signOut()
     }
 
+    /// Spec 5.14: permanent, in-app account deletion. Invokes the
+    /// `delete-account` Edge Function (supabase/functions/delete-account),
+    /// which is the only thing with service-role rights to cascade the
+    /// deletion and then remove the auth.users row itself.
+    func deleteAccount() async throws {
+        struct EmptyResponse: Decodable {}
+        _ = try await client.functions.invoke("delete-account") as EmptyResponse
+    }
+
     // MARK: - RPCs (supabase/migrations/20260817000010_rpc_functions.sql)
 
     struct WorkspaceRow: Decodable, Sendable {
