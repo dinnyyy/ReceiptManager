@@ -174,12 +174,19 @@ Update this section as you go. Check items only when actually done, not
 aspirationally - the whole point is that a resuming session can trust it.
 
 ### Foundation
-- [ ] Repo scaffolding (dirs, README, this file, .gitignore)
-- [ ] Graphify initialized
-- [ ] Supabase migrations: workspaces/purchases/items/attachments/warranties/tags/folders + RLS
-- [ ] RLS proven with local Postgres cross-workspace negative test
-- [ ] `create_initial_workspace` RPC (idempotent)
-- [ ] `search_purchases` RPC (structured + full-text)
+- [x] Repo scaffolding (dirs, README, this file, .gitignore)
+- [x] Graphify initialized
+- [x] Supabase migrations: workspaces/purchases/items/attachments/warranties/tags/folders + RLS
+- [x] RLS proven with local Postgres cross-workspace negative test (`scripts/db_test.sh`,
+      `supabase/tests/001_rls_isolation.sql`, 13/13 assertions passing). This run caught
+      and fixed two real bugs: `INSERT ... RETURNING` is subject to the table's SELECT
+      RLS policy, not just INSERT's WITH CHECK, so `create_initial_workspace()` was
+      failing to create a user's very first workspace/membership pair.
+- [x] `create_initial_workspace` RPC (idempotent)
+- [x] `search_purchases` RPC (structured + full-text)
+- [x] `delete_account_data` RPC (service-role only)
+- [x] Storage bucket + RLS policies (`proof-files`, private)
+- [x] Seed script (`supabase/seed/seed.sql`)
 - [ ] ReceiptVaultCore package: domain models
 - [ ] ReceiptVaultCore: AU financial-year helper (+ tests)
 - [ ] ReceiptVaultCore: receipt date parser (+ tests)
@@ -243,6 +250,11 @@ aspirationally - the whole point is that a resuming session can trust it.
 - **Never use em dashes (—) anywhere**: not in code comments, commit
   messages, docs, or UI copy. Use a hyphen, colon, or a new sentence
   instead.
+- **Commits always use the repo owner's identity**, never Claude's. Local
+  git config in this repo is already set to `dinnyyy <joshdinn01@gmail.com>`;
+  do not add Co-Authored-By or any other Claude attribution to commit
+  messages, and don't let a fresh session reset `user.name`/`user.email`
+  back to a Claude identity.
 
 ## 7. Decisions deliberately left as placeholders (need founder/legal input before App Store submission)
 
