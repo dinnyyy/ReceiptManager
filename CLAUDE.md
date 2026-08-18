@@ -200,10 +200,11 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [ ] XcodeGen `project.yml` + app entry point/router/environment
 
 ### Auth & onboarding
-- [ ] Onboarding cards (Scan once / Find it later / Proof Packs)
-- [ ] Sign in with Apple
-- [ ] Supabase email OTP/magic link
-- [ ] Session restore on launch (never a permanent blank screen)
+- [x] Onboarding cards (Scan once / Find it later / Proof Packs)
+- [x] Sign in with Apple (custom ASAuthorizationController coordinator, spec-clean async AuthService API)
+- [x] Supabase email OTP/magic link
+- [x] Session restore on launch (never a permanent blank screen)
+- [x] Idempotent workspace bootstrap wired to `create_initial_workspace` RPC
 
 ### Capture → OCR → Review
 - [ ] Capture source sheet (camera/photo/file/manual)

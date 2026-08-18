@@ -20,6 +20,9 @@ settings:
 packages:
   ReceiptVaultCore:
     path: Packages/ReceiptVaultCore
+  Supabase:
+    url: https://github.com/supabase/supabase-swift
+    from: 2.5.0
 
 targets:
   ReceiptVault:
@@ -34,6 +37,12 @@ targets:
       - path: Resources
     dependencies:
       - package: ReceiptVaultCore
+      - package: Supabase
+        product: Supabase
+      - sdk: StoreKit.framework
+    configFiles:
+      Debug: Config/Secrets.xcconfig
+      Release: Config/Secrets.xcconfig
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.receiptvault.app
@@ -49,6 +58,8 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        SupabaseURL: "$(SUPABASE_URL)"
+        SupabaseAnonKey: "$(SUPABASE_ANON_KEY)"
         NSCameraUsageDescription: "Used to scan receipts and invoices directly into your vault."
         NSPhotoLibraryUsageDescription: "Used to import receipt photos and screenshots you've already saved."
         NSPhotoLibraryAddUsageDescription: "Used to save a copy of a scanned receipt back to your photo library, if you choose to."
