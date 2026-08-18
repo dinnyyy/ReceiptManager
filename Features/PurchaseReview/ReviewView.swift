@@ -70,6 +70,12 @@ struct ReviewView: View {
         } message: {
             Text("You tagged this as Warranty or Asset. Add the item's serial number, model and warranty expiry so you can find it later.")
         }
+        .sheet(isPresented: Binding(
+            get: { viewModel?.shouldShowPaywall ?? false },
+            set: { if !$0 { viewModel?.shouldShowPaywall = false } }
+        )) {
+            PaywallView(trigger: .freeLimitReached)
+        }
     }
 
     @ViewBuilder

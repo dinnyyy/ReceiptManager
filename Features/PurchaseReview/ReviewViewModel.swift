@@ -111,11 +111,24 @@ final class ReviewViewModel {
         !merchantName.isEmpty || purchaseDate != nil || !totalAmountText.isEmpty || !selectedPurposes.isEmpty || !draft.fileURLs.isEmpty
     }
 
+    var shouldShowPaywall = false
+
     func save() async {
         guard let workspaceID = environment.currentWorkspaceID else {
             saveErrorMessage = "No workspace yet - please sign in again."
             return
         }
+
+        // Spec 11.1: paywall triggers when saving would exceed the free
+        // limit - checked here, not earlier, so browsing/scanning/OCR
+        // never feels gated, only the actual save does.
+        let savedCount = (try? environment.purchaseRepository.count(workspaceID: workspaceID, status: .saved)) ?? 0
+        if EntitlementRules.shouldShowPaywall(currentSavedCount: savedCount, plan: environment.subscriptionService.entitlement.plan) {
+            environment.analyticsService.track(.paywallViewed(trigger: "freeLimitReached", planContext: environment.subscriptionService.entitlement.plan.rawValue))
+            shouldShowPaywall = true
+            return
+        }
+
         isSaving = true
         defer { isSaving = false }
 

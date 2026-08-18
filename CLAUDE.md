@@ -271,11 +271,14 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [ ] `PaywallView` it opens on a free-tier export attempt does not exist yet (Task 13)
 
 ### Monetisation & settings
-- [ ] StoreKit 2 products (Free / Solo Pro monthly / annual)
-- [ ] Paywall screen + entitlement gating at free limit
-- [ ] Restore purchases
+- [x] StoreKit 2 products (Free / Solo Pro monthly / annual) - `StoreKitSubscriptionService`
+- [x] Paywall screen + entitlement gating at free limit (`PaywallView`, wired into
+      `ReviewViewModel.save()` and `ExportBuilderViewModel.generate()`)
+- [x] Restore purchases
 - [ ] Settings screen (profile, storage, export-all, delete account)
-- [ ] Privacy-minimised analytics events (spec section 15 event list)
+- [x] Analytics event *types* defined with redaction-safe payloads (`AnalyticsEvent`);
+      call sites wired for capture/save/search/export/paywall/subscription. Still using
+      `NoOpAnalyticsService` since spec 20 leaves the actual backend a founder decision.
 
 ### Quality
 - [ ] Accessibility pass (Dynamic Type, VoiceOver labels, non-colour-only status)
