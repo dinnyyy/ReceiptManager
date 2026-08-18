@@ -187,14 +187,16 @@ aspirationally - the whole point is that a resuming session can trust it.
 - [x] `delete_account_data` RPC (service-role only)
 - [x] Storage bucket + RLS policies (`proof-files`, private)
 - [x] Seed script (`supabase/seed/seed.sql`)
-- [ ] ReceiptVaultCore package: domain models
-- [ ] ReceiptVaultCore: AU financial-year helper (+ tests)
-- [ ] ReceiptVaultCore: receipt date parser (+ tests)
-- [ ] ReceiptVaultCore: merchant/total/GST field scorer (+ tests)
-- [ ] ReceiptVaultCore: CSV escaping + Tax CSV builder (+ tests)
-- [ ] ReceiptVaultCore: duplicate-detection scorer (+ tests)
-- [ ] ReceiptVaultCore: sync state machine (+ tests)
-- [ ] ReceiptVaultCore: entitlement gating rules (+ tests)
+- [x] ReceiptVaultCore package: domain models (Purchase, Item, Attachment,
+      Warranty, DateOnly, enumerations)
+- [x] ReceiptVaultCore: AU financial-year helper (+ tests)
+- [x] ReceiptVaultCore: receipt date parser (+ tests)
+- [x] ReceiptVaultCore: merchant/total/GST field scorer (+ tests)
+- [x] ReceiptVaultCore: CSV escaping + Tax CSV builder (+ tests)
+- [x] ReceiptVaultCore: duplicate-detection scorer (+ tests)
+- [x] ReceiptVaultCore: sync state machine (+ tests)
+- [x] ReceiptVaultCore: entitlement gating rules (+ tests)
+- [x] ReceiptVaultCore: warranty status + reminder schedule (+ tests)
 - [ ] XcodeGen `project.yml` + app entry point/router/environment
 
 ### Auth & onboarding
