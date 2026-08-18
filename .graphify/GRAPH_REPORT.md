@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-08-18)
 
 ## Corpus Check
-- Corpus is ~22,225 words - fits in a single context window. You may not need a graph.
+- Corpus is ~24,911 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 77 nodes · 120 edges · 10 communities detected
+- 79 nodes · 124 edges · 10 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 48 · references: 27 · MODIFIES: 14 · ON_BRANCH: 10 · reads_from: 10 · PARENT_OF: 8 · triggers: 3
+- Edge kinds: contains: 48 · references: 27 · MODIFIES: 14 · ON_BRANCH: 12 · PARENT_OF: 10 · reads_from: 10 · triggers: 3
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 75 · Candidates: 88
+- Included files: 80 · Candidates: 93
 - Excluded: 0 untracked · 21 ignored · 1 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `9c27588`
+- Built from Git commit: `9c7307b`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `public.delete_account_data()` - 6 edges
@@ -43,8 +43,8 @@
 ## Communities
 
 ### Community 0 - "Core Purchase Schema"
-Cohesion: 0.29
-Nodes (10): claude/iphone-app-mvp-phase-1-p1std2, main, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, 9c27588 Add Sign in with Apple, Supabase email OTP, and workspace bootstrap, a2766ae graphify update: index Supabase schema; stop tracking ephemeral graphify state, a3ffe8d graphify update: index ReceiptVaultCore (note: tree-sitter Swift grammar unavailable in this environment, AST extraction limited), b57c9cd Add ReceiptVaultCore: pure-Swift domain models and business logic (+2 more)
+Cohesion: 0.26
+Nodes (12): claude/iphone-app-mvp-phase-1-p1std2, main, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 95e91dc Initialize graphify knowledge graph; add no-em-dash convention to CLAUDE.md, 9c27588 Add Sign in with Apple, Supabase email OTP, and workspace bootstrap, 9c7307b Add SwiftData repositories, attachment staging, and outbox sync engine, a2766ae graphify update: index Supabase schema; stop tracking ephemeral graphify state (+4 more)
 
 ### Community 1 - "Project Documentation"
 Cohesion: 0.20

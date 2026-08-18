@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787043643681.3984,
-    "hash": "bd973ed1b0d7fb9e8ff9c544ac8698a7"
+    "mtime": 1787043871457.3933,
+    "hash": "2b64f74eb7212bc78195f61501c3088b"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787043101497.411,
-    "hash": "ef0828fab6c00b36d08737f66bb59687"
+    "mtime": 1787043667909.398,
+    "hash": "65a5f54cff3a803ca5b6924515c12471"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -180,8 +180,8 @@
     "hash": "447bdcb41975613c7138df403deb97d6"
   },
   "App/AppEnvironment.swift": {
-    "mtime": 1787043375825.4045,
-    "hash": "336430321e759a71937ae51e3ebd9ca1"
+    "mtime": 1787043839369.394,
+    "hash": "51b9cc2d358e9295276332fcb3e35b19"
   },
   "App/AppRouter.swift": {
     "mtime": 1787043401017.404,
@@ -196,8 +196,8 @@
     "hash": "cd11e25e75d1ed0dce61ba7f4c24a6fd"
   },
   "App/ReceiptVaultApp.swift": {
-    "mtime": 1787043194209.4087,
-    "hash": "a13579434f75d46ae1db72ef4513e717"
+    "mtime": 1787043846221.3938,
+    "hash": "25619a99b9bb29f04481d20f42f71f8d"
   },
   "App/RootView.swift": {
     "mtime": 1787043421253.4036,
@@ -298,5 +298,25 @@
   "project.yml": {
     "mtime": 1787043531681.4011,
     "hash": "155f70f4f1f161b2d18cf6819afeefd6"
+  },
+  "Core/Persistence/SwiftDataItemRepository.swift": {
+    "mtime": 1787043756237.396,
+    "hash": "65359040aa11e1690bfa356c9b371e6b"
+  },
+  "Core/Persistence/SwiftDataPurchaseRepository.swift": {
+    "mtime": 1787043719045.3967,
+    "hash": "f3599c3fbd6111b44b5fa030f9135733"
+  },
+  "Core/Storage/SupabaseAttachmentService.swift": {
+    "mtime": 1787043770645.3955,
+    "hash": "07f19cf6efc2c2bc1ba9251bf702d86b"
+  },
+  "Core/Sync/OutboxQueue.swift": {
+    "mtime": 1787043740149.3962,
+    "hash": "1efe4cf2352d2c6d85621c088f6ab25c"
+  },
+  "Core/Sync/SyncEngine.swift": {
+    "mtime": 1787043815297.3945,
+    "hash": "089fc259207c7544598243461fa90d19"
   }
 }
