@@ -11,4 +11,5 @@ public protocol AttachmentRepository {
     func save(_ attachment: Attachment, localFilePath: String?) throws
     func delete(id: UUID) throws
     func attachments(purchaseID: UUID) throws -> [Attachment]
+    func attachments(itemID: UUID) throws -> [Attachment]
 }

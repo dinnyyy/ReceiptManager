@@ -46,4 +46,9 @@ final class SwiftDataAttachmentRepository: AttachmentRepository {
         let descriptor = FetchDescriptor<PurchaseEntity>(predicate: #Predicate { $0.id == purchaseID })
         return try modelContext.fetch(descriptor).first?.attachments.map { $0.toDomain() } ?? []
     }
+
+    func attachments(itemID: UUID) throws -> [Attachment] {
+        let descriptor = FetchDescriptor<ItemEntity>(predicate: #Predicate { $0.id == itemID })
+        return try modelContext.fetch(descriptor).first?.attachments.map { $0.toDomain() } ?? []
+    }
 }
