@@ -1,7 +1,7 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787043871457.3933,
-    "hash": "2b64f74eb7212bc78195f61501c3088b"
+    "mtime": 1787044102309.388,
+    "hash": "228f3e20e6e3df6ae2e6d4954954a3a4"
   },
   "README.md": {
     "mtime": 1787042234360.6619,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787043667909.398,
-    "hash": "65a5f54cff3a803ca5b6924515c12471"
+    "mtime": 1787043891965.3928,
+    "hash": "e9e9eb8ce94af7ad04df8338bcf3e630"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -180,8 +180,8 @@
     "hash": "447bdcb41975613c7138df403deb97d6"
   },
   "App/AppEnvironment.swift": {
-    "mtime": 1787043839369.394,
-    "hash": "51b9cc2d358e9295276332fcb3e35b19"
+    "mtime": 1787044021909.39,
+    "hash": "eeff1eda1962abdec8f7d99ca8858be5"
   },
   "App/AppRouter.swift": {
     "mtime": 1787043401017.404,
@@ -318,5 +318,37 @@
   "Core/Sync/SyncEngine.swift": {
     "mtime": 1787043815297.3945,
     "hash": "089fc259207c7544598243461fa90d19"
+  },
+  "Core/Capture/CaptureDraft.swift": {
+    "mtime": 1787043934001.3918,
+    "hash": "5fb5c4aa5ba0ec78a74d766af6e43c6e"
+  },
+  "Core/Capture/DocumentScannerView.swift": {
+    "mtime": 1787043922365.392,
+    "hash": "64b70c759240f6a46c63cd5ff108305b"
+  },
+  "Core/OCR/VisionOCRService.swift": {
+    "mtime": 1787043979237.3909,
+    "hash": "f54af5def356bec87241785276c1d267"
+  },
+  "Core/Persistence/AttachmentRepository.swift": {
+    "mtime": 1787043997893.3904,
+    "hash": "9218cf625f881b818f1e37b0d1c5ec1f"
+  },
+  "Core/Persistence/SwiftDataAttachmentRepository.swift": {
+    "mtime": 1787044005373.3901,
+    "hash": "7eb8bbb9285b885ce99d46af6857456b"
+  },
+  "Features/Capture/CaptureSourceSheet.swift": {
+    "mtime": 1787043954909.3914,
+    "hash": "338882eebeb1d0b6955a8df45a91e572"
+  },
+  "Features/PurchaseReview/ReviewView.swift": {
+    "mtime": 1787044090993.3882,
+    "hash": "fa9510fe61ca4f4b3034efc8dba0f4e8"
+  },
+  "Features/PurchaseReview/ReviewViewModel.swift": {
+    "mtime": 1787044049629.3892,
+    "hash": "80b5fa1ac59319391ba1210309c59eb4"
   }
 }
