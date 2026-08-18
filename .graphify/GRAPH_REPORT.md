@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-08-18)
 
 ## Corpus Check
-- Corpus is ~38,360 words - fits in a single context window. You may not need a graph.
+- Corpus is ~39,365 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 91 nodes · 147 edges · 11 communities detected
+- 93 nodes · 151 edges · 11 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 48 · references: 27 · ON_BRANCH: 23 · PARENT_OF: 21 · MODIFIES: 15 · reads_from: 10 · triggers: 3
+- Edge kinds: contains: 48 · references: 27 · ON_BRANCH: 25 · PARENT_OF: 23 · MODIFIES: 15 · reads_from: 10 · triggers: 3
 
 
 ## Input Scope
 - Requested: auto
 - Resolved: committed (source: default-auto)
-- Included files: 116 · Candidates: 129
-- Excluded: 0 untracked · 21 ignored · 1 sensitive · 0 missing committed
+- Included files: 117 · Candidates: 130
+- Excluded: 0 untracked · 22 ignored · 1 sensitive · 0 missing committed
 - Recommendation: Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder.
 
 ## Graph Freshness
-- Built from Git commit: `e3c6353`
+- Built from Git commit: `f0adbe4`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `public.delete_account_data()` - 6 edges
@@ -47,8 +47,8 @@
 ## Communities
 
 ### Community 0 - "Core Purchase Schema"
-Cohesion: 0.19
-Nodes (19): claude/iphone-app-mvp-phase-1-p1std2, 0db04cc Add Home, Purchase Detail, and Vault screens, 1bf43bd Add export builder (shared PDF renderer, CSV, share sheet); fix enum conformance, 5051277 graphify update: index export builder and subscriptions, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 884db08 graphify update: index Home/PurchaseDetail/Vault, 9c27588 Add Sign in with Apple, Supabase email OTP, and workspace bootstrap (+11 more)
+Cohesion: 0.17
+Nodes (21): claude/iphone-app-mvp-phase-1-p1std2, 0db04cc Add Home, Purchase Detail, and Vault screens, 1bf43bd Add export builder (shared PDF renderer, CSV, share sheet); fix enum conformance, 1d4fbad graphify update: index settings feature, 5051277 graphify update: index export builder and subscriptions, 74b3489 Add iOS app scaffold: project.yml, SwiftData schema, service protocols, 77d838a graphify update: index auth/onboarding, 884db08 graphify update: index Home/PurchaseDetail/Vault (+13 more)
 
 ### Community 1 - "Project Documentation"
 Cohesion: 0.20

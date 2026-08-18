@@ -1,11 +1,11 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787045030805.3667,
-    "hash": "3b9e4f80de2805e4931f92ba18e10583"
+    "mtime": 1787045246965.3618,
+    "hash": "60ba1d69be276827897073c6f75a77fb"
   },
   "README.md": {
-    "mtime": 1787042234360.6619,
-    "hash": "58f3bc54d55c58e5e1365952d1f178fd"
+    "mtime": 1787045182413.3633,
+    "hash": "295dadcbf6c0f44cebe3c986f94aa7ed"
   },
   "scripts/local_pg_stub.sql": {
     "mtime": 1787042077941.4343,
@@ -64,8 +64,8 @@
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787044931461.3691,
-    "hash": "b79b6a9a66f3dbb56ca330cdd72ef51c"
+    "mtime": 1787045055173.3662,
+    "hash": "7f1a5256ac109ec1b7231e1cad5c56e9"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
     "mtime": 1787042703629.42,
@@ -192,8 +192,8 @@
     "hash": "fe935b9839ec1543775bba4e60d83540"
   },
   "App/MainTabView.swift": {
-    "mtime": 1787043440829.403,
-    "hash": "cd11e25e75d1ed0dce61ba7f4c24a6fd"
+    "mtime": 1787045239461.362,
+    "hash": "707b3c314a1830845353ba01909e63a2"
   },
   "App/ReceiptVaultApp.swift": {
     "mtime": 1787043846221.3938,
@@ -360,8 +360,8 @@
     "hash": "63e5a91320ad02f8498796bc16b98c56"
   },
   "Features/PurchaseDetail/PurchaseDetailView.swift": {
-    "mtime": 1787044309293.3833,
-    "hash": "e4c1e5a9aceb94b1110b027379d84ca0"
+    "mtime": 1787045124425.3645,
+    "hash": "bd4164b336c845e339398c3d7d6d95dd"
   },
   "Features/PurchaseDetail/PurchaseDetailViewModel.swift": {
     "mtime": 1787044318133.383,
@@ -412,8 +412,8 @@
     "hash": "0bf1830dc1969beff589c01cdc0d4280"
   },
   "Features/Items/ItemsView.swift": {
-    "mtime": 1787044443425.3801,
-    "hash": "ae764a0f303226f7f512e9105bfa15e9"
+    "mtime": 1787045106229.365,
+    "hash": "e8469f20b092d10552ff9ed51402b71c"
   },
   "Features/Items/ItemsViewModel.swift": {
     "mtime": 1787044431429.3804,
@@ -462,5 +462,9 @@
   "supabase/functions/delete-account/index.ts": {
     "mtime": 1787044968141.3682,
     "hash": "8c68ea24bbdea7970cdd039b652c3eb0"
+  },
+  "Tests/Unit/SwiftDataPurchaseRepositoryTests.swift": {
+    "mtime": 1787045147061.364,
+    "hash": "6aa29316a8172062a6d03df19db2194c"
   }
 }
