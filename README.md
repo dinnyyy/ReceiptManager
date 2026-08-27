@@ -57,19 +57,23 @@ docs/                   Source research & specification documents
 **Fastest path to just look at the app**: `ReceiptVaultApp.swift` currently
 points at `AppEnvironment.localOnly()`, which skips sign-in and Supabase
 entirely - capture/OCR/Review/Vault/Items/Export all work for real against
-an on-disk local database. Skip straight to step 2 below; you don't need a
-Supabase project for this. Switch it to `.live()` (see the comment at the
-top of that file) once you want real auth/backup/sync.
+an on-disk local database. `Config/Secrets.xcconfig` ships with safe
+placeholder values (`AppEnvironment.localOnly()` never reads them), so you
+can go straight to step 1 below with no backend setup at all. Switch to
+`.live()` (see the comment at the top of that file) once you want real
+auth/backup/sync.
 
-1. Copy `Config/Secrets.xcconfig.template` to `Config/Secrets.xcconfig` and
-   fill in your Supabase project's URL and anon key (see the template's
-   comments - the anon key is safe to ship, RLS protects every table).
-2. Install [XcodeGen](https://github.com/yonaskolb/XcodeGen): `brew install xcodegen`
-3. From the repo root: `xcodegen generate`
-4. Open `ReceiptVault.xcodeproj` and run on an iPhone 15+ simulator (see
+1. Install [XcodeGen](https://github.com/yonaskolb/XcodeGen): `brew install xcodegen`
+2. From the repo root: `xcodegen generate`
+3. Open `ReceiptVault.xcodeproj` and run on an iPhone 15+ simulator (see
    `project.yml` for the minimum deployment target). Fix whatever the
    compiler flags first - see "Not yet done" above.
-5. Backend: install the [Supabase CLI](https://supabase.com/docs/guides/cli),
+
+**Only if you're switching to `.live()`** for real auth/backup/sync:
+
+4. Edit `Config/Secrets.xcconfig` with a real Supabase project's URL and
+   anon key (the anon key is safe to ship - RLS protects every table).
+5. Install the [Supabase CLI](https://supabase.com/docs/guides/cli),
    run `supabase start`, then `supabase db reset` to apply
    `supabase/migrations/`. Deploy `supabase/functions/delete-account` with
    `supabase functions deploy delete-account` for account deletion to work.

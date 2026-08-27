@@ -20,7 +20,11 @@ xcuserdata/
 .env
 .env.*
 *.xcconfig.local
-Config/Secrets.xcconfig
+# Config/Secrets.xcconfig is intentionally NOT ignored: xcodegen requires
+# the file to physically exist (project.yml references it unconditionally),
+# and it ships with safe placeholder values since AppEnvironment.localOnly()
+# never reads them. Put real Supabase credentials in it locally once you
+# switch to .live() - just don't commit real values over the placeholders.
 
 # Supabase local dev
 supabase/.branches/

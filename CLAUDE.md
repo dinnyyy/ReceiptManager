@@ -191,26 +191,28 @@ SwiftUI/Supabase-SDK API surface details (exact method signatures,
 property names) that only a real compiler catches.
 
 Concretely, in order:
-1. `cp Config/Secrets.xcconfig.template Config/Secrets.xcconfig` and fill
-   in a real (or throwaway dev) Supabase project's URL/anon key.
-2. `xcodegen generate`, open `ReceiptVault.xcodeproj`.
-3. Fix compiler errors file by file. Most likely spots, in rough order of
+1. `xcodegen generate`, open `ReceiptVault.xcodeproj` - builds and runs as-is
+   against `AppEnvironment.localOnly()` (no backend needed, see the note
+   at the top of `ReceiptVaultApp.swift`). Only edit `Config/Secrets.xcconfig`
+   (already exists with placeholder values) and switch to `.live()` once you
+   want a real Supabase project wired up.
+2. Fix compiler errors file by file. Most likely spots, in rough order of
    risk: `Core/Backend/SupabaseBackend.swift` (Supabase Swift SDK calls -
    its header comment flags this explicitly), `Core/Subscriptions/
    StoreKitSubscriptionService.swift` (StoreKit 2 API). `MainTabView.swift`
    deliberately uses the classic tag-based `TabView`, not the iOS 18-only
    `Tab(value:)` builder, to match the iOS 17.0 deployment target - if you
    raise the minimum iOS version, that's a reasonable place to modernize.
-4. Run `supabase start` + `supabase db reset` locally (or point at a real
-   project) and smoke-test the signup -> scan -> save -> search -> export
-   flow end to end - this is the first time that flow will have executed
-   at all.
-5. Run the XCTest suites (`Packages/ReceiptVaultCore` first - it should
+3. Switch to `.live()` and run `supabase start` + `supabase db reset`
+   locally (or point at a real project), then smoke-test the signup ->
+   scan -> save -> search -> export flow end to end - this is the first
+   time that flow will have executed at all.
+4. Run the XCTest suites (`Packages/ReceiptVaultCore` first - it should
    pass close to immediately since its logic was cross-validated in
    Python; then `Tests/Unit`).
-6. Do a real VoiceOver + Dynamic Type pass on a device (see Quality
+5. Do a real VoiceOver + Dynamic Type pass on a device (see Quality
    checklist below).
-7. Add the missing app icon image, decide the real app name/branding,
+6. Add the missing app icon image, decide the real app name/branding,
    subscription prices, and legal text (section 6 below lists every
    placeholder still outstanding).
 

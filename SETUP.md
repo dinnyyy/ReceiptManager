@@ -44,6 +44,13 @@ real build onto someone else's iPhone.
 
 ## Part 1 - One-time setup (technical)
 
+**Shortcut for a first "just let him look at it" build**: the app
+currently runs in a local-only mode (no sign-in, no Supabase project
+needed - see `README.md`) that works fine for a TestFlight build too. You
+can skip step 5 (Supabase) entirely for your very first upload if you just
+want your partner poking around the UI; come back and do it once you want
+his test data actually backed up / synced.
+
 ### 1. Get a Mac with Xcode
 
 Xcode only runs on macOS. If you don't own a Mac, a rental service like
@@ -87,12 +94,13 @@ git checkout main
 
 ### 6. Configure the app with your Supabase details
 
-```
-cp Config/Secrets.xcconfig.template Config/Secrets.xcconfig
-```
+Edit `Config/Secrets.xcconfig` (already exists in the repo with placeholder
+values - just replace them) and paste in the URL and anon key from step 5.
 
-Edit `Config/Secrets.xcconfig` and paste in the URL and anon key from step 5.
-(This file is gitignored - your keys never get committed.)
+You'll also need to switch `ReceiptVaultApp.swift` from
+`AppEnvironment.localOnly()` to `AppEnvironment.live()` - it's a one-line
+change at the top of that file, currently set to local-only so the app can
+be built and tested without any backend at all.
 
 ### 7. Generate and open the Xcode project
 
