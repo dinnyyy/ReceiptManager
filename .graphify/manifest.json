@@ -1,470 +1,486 @@
 {
   "CLAUDE.md": {
-    "mtime": 1787045246965.3618,
-    "hash": "60ba1d69be276827897073c6f75a77fb"
+    "mtime": 1787835715054.8901,
+    "hash": "d9b608a60b177f14b8e87c081351be0a"
   },
   "README.md": {
-    "mtime": 1787045182413.3633,
-    "hash": "295dadcbf6c0f44cebe3c986f94aa7ed"
+    "mtime": 1787835703110.8904,
+    "hash": "ee1cd5d13cc1b6dfe352ea276a9c2fe7"
   },
   "scripts/local_pg_stub.sql": {
-    "mtime": 1787042077941.4343,
+    "mtime": 1787045669171.438,
     "hash": "6b5aecee997085c010cda60356377e16"
   },
   "supabase/migrations/20260817000001_extensions.sql": {
-    "mtime": 1787042234360.6619,
+    "mtime": 1787045669086.2021,
     "hash": "3db7e1b4461cbce20b987478768c4b04"
   },
   "supabase/migrations/20260817000002_core_tables.sql": {
-    "mtime": 1787041891949.4385,
+    "mtime": 1787045669171.438,
     "hash": "418c4a2462e61fa638edb227a17e645b"
   },
   "supabase/migrations/20260817000003_purchases.sql": {
-    "mtime": 1787041899113.4385,
+    "mtime": 1787045669171.438,
     "hash": "a37123bcaa0c33a7ca0572b58c4c798e"
   },
   "supabase/migrations/20260817000004_items_and_warranties.sql": {
-    "mtime": 1787041905785.4382,
+    "mtime": 1787045669171.438,
     "hash": "eb08963b71c08221737db87d07240747"
   },
   "supabase/migrations/20260817000005_attachments.sql": {
-    "mtime": 1787041910673.4382,
+    "mtime": 1787045669171.438,
     "hash": "0645bda328d6d75f5478d2bd3a34c53d"
   },
   "supabase/migrations/20260817000006_subscription_state.sql": {
-    "mtime": 1787041914377.438,
+    "mtime": 1787045669171.438,
     "hash": "53c1aeb099a00ff0314251914aa48817"
   },
   "supabase/migrations/20260817000007_search_indexes.sql": {
-    "mtime": 1787041921201.438,
+    "mtime": 1787045669171.438,
     "hash": "d545bf458821e2b2dcc7cc9b55f7f99f"
   },
   "supabase/migrations/20260817000008_updated_at_triggers.sql": {
-    "mtime": 1787041925901.4377,
+    "mtime": 1787045669171.438,
     "hash": "a749f594d44ba7dc03f3b7aa2433f9fd"
   },
   "supabase/migrations/20260817000009_rls.sql": {
-    "mtime": 1787042462869.4255,
+    "mtime": 1787045669171.438,
     "hash": "36f8f96d35ffc8f5195db4600f719b2e"
   },
   "supabase/migrations/20260817000010_rpc_functions.sql": {
-    "mtime": 1787042438777.426,
+    "mtime": 1787045669171.438,
     "hash": "b0d85fea87dc93658869f2a550c04c7c"
   },
   "supabase/migrations/20260817000011_storage.sql": {
-    "mtime": 1787042011501.4358,
+    "mtime": 1787045669171.438,
     "hash": "cd1434ce2267c3b84f0e30fb7973a5e3"
   },
   "supabase/seed/seed.sql": {
-    "mtime": 1787042540893.4238,
+    "mtime": 1787045669171.438,
     "hash": "b5526e1e012dccdeea26a3ea106c2736"
   },
   "supabase/tests/001_rls_isolation.sql": {
-    "mtime": 1787042522285.424,
+    "mtime": 1787045669171.438,
     "hash": "eb93284044249ef85ebcf7908401b746"
   },
   ".graphify/GRAPH_REPORT.md": {
-    "mtime": 1787045055173.3662,
-    "hash": "7f1a5256ac109ec1b7231e1cad5c56e9"
+    "mtime": 1787045671202.5989,
+    "hash": "68ff9c44907bee35babadee29baff612"
   },
   "Packages/ReceiptVaultCore/Package.swift": {
-    "mtime": 1787042703629.42,
+    "mtime": 1787045669369.4355,
     "hash": "f29c2f5e01755b67ea456bfb4a820e18"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Attachment.swift": {
-    "mtime": 1787042898873.4155,
+    "mtime": 1787045669369.541,
     "hash": "848c3ccea3c3827e2edf7fc711636fd1"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/DateOnly.swift": {
-    "mtime": 1787042866761.4163,
+    "mtime": 1787045669369.6292,
     "hash": "5d4c11c99703f96ac7062e7f39657434"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Enumerations.swift": {
-    "mtime": 1787044755401.373,
+    "mtime": 1787045670632.0476,
     "hash": "601acd216fa1488514d1530f55118d42"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Item.swift": {
-    "mtime": 1787042848417.4167,
+    "mtime": 1787045669369.6292,
     "hash": "e6f207b290767069e9e11905634a679d"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Purchase.swift": {
-    "mtime": 1787042841297.4167,
+    "mtime": 1787045669369.6292,
     "hash": "6ccd63738f0485bb2ae6a4e5ab3b0357"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Domain/Warranty.swift": {
-    "mtime": 1787042860109.4165,
+    "mtime": 1787045669369.6292,
     "hash": "59ab5295b527afe770cd375e843fd5fe"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Duplicate/DuplicateDetector.swift": {
-    "mtime": 1787042813593.4175,
+    "mtime": 1787045669369.6292,
     "hash": "deec0c3180bc26ac1d9421886064d091"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Entitlement/EntitlementRules.swift": {
-    "mtime": 1787042830813.417,
+    "mtime": 1787045669369.6292,
     "hash": "40f8beddb54e0dc121ddb0db48652df0"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Export/CSVBuilder.swift": {
-    "mtime": 1787042795165.418,
+    "mtime": 1787045669369.6292,
     "hash": "17070ff96af8a18c4132f1a95005d17a"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/FinancialYear/AustralianFinancialYear.swift": {
-    "mtime": 1787042740681.4192,
+    "mtime": 1787045669369.6292,
     "hash": "76f077f93054402f9120d75f584576a5"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Money/Money.swift": {
-    "mtime": 1787042734893.4192,
+    "mtime": 1787045669369.6292,
     "hash": "2919006ec0ce0661b08d4b7cdcb90567"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Parsing/ReceiptDateParser.swift": {
-    "mtime": 1787042755665.4187,
+    "mtime": 1787045669369.6292,
     "hash": "51f06cd54359c1d95bc8f9f5d4c1af36"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Parsing/ReceiptFieldScorer.swift": {
-    "mtime": 1787044759425.373,
+    "mtime": 1787045670632.0476,
     "hash": "6adb9963115f04aacb70b4be5fb0e352"
   },
   "Packages/ReceiptVaultCore/Sources/ReceiptVaultCore/Sync/SyncStateMachine.swift": {
-    "mtime": 1787042821181.4172,
+    "mtime": 1787045669370.4885,
     "hash": "76e76a2f75bac61f2e0006b03fd34913"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/AttachmentTests.swift": {
-    "mtime": 1787043048805.412,
+    "mtime": 1787045669370.7197,
     "hash": "9ba6a2d1e004e9022dc6950884d43fc4"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/AustralianFinancialYearTests.swift": {
-    "mtime": 1787042923189.415,
+    "mtime": 1787045669370.8042,
     "hash": "07a25a73479e0b95318f117f05a54f6d"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/CSVBuilderTests.swift": {
-    "mtime": 1787042972801.4138,
+    "mtime": 1787045669370.8042,
     "hash": "1c2cd30354b80a4e71c8331985e04e91"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/DateOnlyTests.swift": {
-    "mtime": 1787042909549.4153,
+    "mtime": 1787045669370.8042,
     "hash": "93d2220fddb41f1f0f2288bd6289a7d6"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/DuplicateDetectorTests.swift": {
-    "mtime": 1787042996981.4133,
+    "mtime": 1787045669370.8042,
     "hash": "26a14bba234bdb612b1c2b4c01b4c5e6"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/EntitlementRulesTests.swift": {
-    "mtime": 1787043011069.4128,
+    "mtime": 1787045669370.8042,
     "hash": "e94d23c251b9c037d02d90a04108f711"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/MoneyTests.swift": {
-    "mtime": 1787043030945.4126,
+    "mtime": 1787045669370.8042,
     "hash": "b2aec71cf9f909019fdc1890e28ee5ec"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/PurchaseTests.swift": {
-    "mtime": 1787043042013.4124,
+    "mtime": 1787045669370.8042,
     "hash": "a894e005d17e054d43752c1c4ce13726"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/ReceiptDateParserTests.swift": {
-    "mtime": 1787042929157.4148,
+    "mtime": 1787045669370.8042,
     "hash": "d215ee57e93d98edbe37e4862360c721"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/ReceiptFieldScorerTests.swift": {
-    "mtime": 1787042938337.4146,
+    "mtime": 1787045669370.8042,
     "hash": "8373af89a3a87770f90d6b437ec1ecd3"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/SyncStateMachineTests.swift": {
-    "mtime": 1787043003641.413,
+    "mtime": 1787045669370.8042,
     "hash": "8e2f93d799cb5a3324390b57a68c3b0a"
   },
   "Packages/ReceiptVaultCore/Tests/ReceiptVaultCoreTests/WarrantyTests.swift": {
-    "mtime": 1787043021717.4126,
+    "mtime": 1787045669370.8042,
     "hash": "cc78ce028f7afb00dd53849338e74b39"
   },
   "App/AppEnvironment+Workspace.swift": {
-    "mtime": 1787043588501.3997,
-    "hash": "447bdcb41975613c7138df403deb97d6"
+    "mtime": 1787835669926.891,
+    "hash": "99350d1ce80a7e9cc06e2f11f56f11f6"
   },
   "App/AppEnvironment.swift": {
-    "mtime": 1787044021909.39,
-    "hash": "eeff1eda1962abdec8f7d99ca8858be5"
+    "mtime": 1787835662122.8914,
+    "hash": "f13a37b6702a83e0e004e8258953faa5"
   },
   "App/AppRouter.swift": {
-    "mtime": 1787044195797.3857,
+    "mtime": 1787045670212.3687,
     "hash": "1ea4c036e8c77691321c7a6e757ebdc3"
   },
   "App/LaunchView.swift": {
-    "mtime": 1787043425573.4036,
+    "mtime": 1787045669542.907,
     "hash": "fe935b9839ec1543775bba4e60d83540"
   },
   "App/MainTabView.swift": {
-    "mtime": 1787045239461.362,
+    "mtime": 1787045671106.4995,
     "hash": "707b3c314a1830845353ba01909e63a2"
   },
   "App/ReceiptVaultApp.swift": {
-    "mtime": 1787043846221.3938,
-    "hash": "25619a99b9bb29f04481d20f42f71f8d"
+    "mtime": 1787835677326.891,
+    "hash": "b58157818a6379a15643f7f0e15f6560"
   },
   "App/RootView.swift": {
-    "mtime": 1787043421253.4036,
+    "mtime": 1787045669542.907,
     "hash": "e81ebddb773f87de90d96228add19e45"
   },
   "Core/Analytics/AnalyticsEvent.swift": {
-    "mtime": 1787044770865.3728,
+    "mtime": 1787045670630.247,
     "hash": "a78cc674cf0f789a508e3788612f3b48"
   },
   "Core/Auth/AppleSignInCoordinator.swift": {
-    "mtime": 1787043575429.4001,
+    "mtime": 1787045669631.9934,
     "hash": "f7ef073b3020495d105e692f8f975609"
   },
   "Core/Auth/AuthService.swift": {
-    "mtime": 1787044978513.368,
+    "mtime": 1787045670926.3435,
     "hash": "7dea6da784e2be1e0e3b542aef883e8a"
   },
   "Core/Auth/SupabaseAuthService.swift": {
-    "mtime": 1787044982309.368,
+    "mtime": 1787045670926.3435,
     "hash": "251882621af396f2187fee4b214eda42"
   },
   "Core/Backend/SupabaseBackend.swift": {
-    "mtime": 1787044974073.3682,
+    "mtime": 1787045670926.3435,
     "hash": "8cbbd8ddd18db79f2a33666cb2084926"
   },
   "Core/Backend/SupabaseConfig.swift": {
-    "mtime": 1787043543865.401,
+    "mtime": 1787045669633.2544,
     "hash": "7bb863dbc0a45ea2c584dd43e8d5459f"
   },
   "Core/Notifications/NotificationScheduler.swift": {
-    "mtime": 1787043329593.4058,
+    "mtime": 1787045669542.907,
     "hash": "b2f3d6d5aca8859889f56ae52bcdd285"
   },
   "Core/OCR/OCRService.swift": {
-    "mtime": 1787043297061.4065,
+    "mtime": 1787045669542.907,
     "hash": "da1e680136340a49e1e9a6083e5759f2"
   },
   "Core/Persistence/ItemRepository.swift": {
-    "mtime": 1787044767113.3728,
+    "mtime": 1787045670631.5498,
     "hash": "937dbfe78817d81d835083d6e3328c0d"
   },
   "Core/Persistence/PersistenceSchema.swift": {
-    "mtime": 1787043283053.4067,
+    "mtime": 1787045669543.7234,
     "hash": "a982dbd530d1330b466a065cdb59ec65"
   },
   "Core/Persistence/PurchaseRepository.swift": {
-    "mtime": 1787044763469.3728,
+    "mtime": 1787045670631.5498,
     "hash": "943a329354dd459345544fba6e952713"
   },
   "Core/Preview/PreviewServices.swift": {
-    "mtime": 1787044985721.3677,
+    "mtime": 1787045670926.3435,
     "hash": "602f2383e67135c60b92d8ebbb4dccb1"
   },
   "Core/Storage/AttachmentService.swift": {
-    "mtime": 1787043303717.4062,
+    "mtime": 1787045669543.7234,
     "hash": "fe59101b87073513e45bdd5bd5aaa157"
   },
   "Core/Subscriptions/SubscriptionService.swift": {
-    "mtime": 1787043324725.4058,
+    "mtime": 1787045669543.7234,
     "hash": "60fd7fb21a7e82719dc84d076b5656c4"
   },
   "Features/Onboarding/AuthView.swift": {
-    "mtime": 1787043635865.3987,
+    "mtime": 1787045669633.344,
     "hash": "0552b5fa97060bf3b2c88b96b429bf59"
   },
   "Features/Onboarding/OnboardingView.swift": {
-    "mtime": 1787043606933.3994,
+    "mtime": 1787045669633.4414,
     "hash": "b425da688e6c98201a3373e3820d2e1a"
   },
   "Models/Persistence/AttachmentEntity.swift": {
-    "mtime": 1787043249129.4075,
+    "mtime": 1787045669543.7234,
     "hash": "f303ed7afa2d7e7691dd397a6a308cca"
   },
   "Models/Persistence/FolderEntity.swift": {
-    "mtime": 1787043273329.407,
+    "mtime": 1787045669544.3315,
     "hash": "4dbcae9d7b8ba6aa4a6762b83777f668"
   },
   "Models/Persistence/ItemEntity.swift": {
-    "mtime": 1787043240689.4077,
+    "mtime": 1787045669544.3315,
     "hash": "ebdc3fe33aad84a6fe3b65dc59a1d49a"
   },
   "Models/Persistence/OutboxOperationEntity.swift": {
-    "mtime": 1787043267245.407,
+    "mtime": 1787045669544.3315,
     "hash": "b39a591c8894d78e191c7ac4dfb278cb"
   },
   "Models/Persistence/PurchaseEntity.swift": {
-    "mtime": 1787043231757.408,
+    "mtime": 1787045669544.3315,
     "hash": "d951c26dd3b37deb165bfd88ed21d745"
   },
   "Models/Persistence/TagEntity.swift": {
-    "mtime": 1787043276929.407,
+    "mtime": 1787045669544.3315,
     "hash": "27817e268be35515e497e7ec2d1faa54"
   },
   "Models/Persistence/WarrantyEntity.swift": {
-    "mtime": 1787043256969.4072,
+    "mtime": 1787045669544.3315,
     "hash": "aa0fb38f5605f3cbc447e1f4b3edc4f8"
   },
   "project.yml": {
-    "mtime": 1787043531681.4011,
+    "mtime": 1787045669633.4414,
     "hash": "155f70f4f1f161b2d18cf6819afeefd6"
   },
   "Core/Persistence/SwiftDataItemRepository.swift": {
-    "mtime": 1787043756237.396,
+    "mtime": 1787045669814.058,
     "hash": "65359040aa11e1690bfa356c9b371e6b"
   },
   "Core/Persistence/SwiftDataPurchaseRepository.swift": {
-    "mtime": 1787043719045.3967,
+    "mtime": 1787045669814.058,
     "hash": "f3599c3fbd6111b44b5fa030f9135733"
   },
   "Core/Storage/SupabaseAttachmentService.swift": {
-    "mtime": 1787043770645.3955,
-    "hash": "07f19cf6efc2c2bc1ba9251bf702d86b"
+    "mtime": 1787835623462.8923,
+    "hash": "ab25fbefb917153290c04fa46f4ba04c"
   },
   "Core/Sync/OutboxQueue.swift": {
-    "mtime": 1787043740149.3962,
+    "mtime": 1787045669814.058,
     "hash": "1efe4cf2352d2c6d85621c088f6ab25c"
   },
   "Core/Sync/SyncEngine.swift": {
-    "mtime": 1787043815297.3945,
+    "mtime": 1787045669815.5757,
     "hash": "089fc259207c7544598243461fa90d19"
   },
   "Core/Capture/CaptureDraft.swift": {
-    "mtime": 1787043934001.3918,
+    "mtime": 1787045670002.238,
     "hash": "5fb5c4aa5ba0ec78a74d766af6e43c6e"
   },
   "Core/Capture/DocumentScannerView.swift": {
-    "mtime": 1787043922365.392,
+    "mtime": 1787045670003.382,
     "hash": "64b70c759240f6a46c63cd5ff108305b"
   },
   "Core/OCR/VisionOCRService.swift": {
-    "mtime": 1787043979237.3909,
+    "mtime": 1787045670003.382,
     "hash": "f54af5def356bec87241785276c1d267"
   },
   "Core/Persistence/AttachmentRepository.swift": {
-    "mtime": 1787044483689.3792,
+    "mtime": 1787045670384.6904,
     "hash": "c495c12c4c64748a27750fa05eb521ec"
   },
   "Core/Persistence/SwiftDataAttachmentRepository.swift": {
-    "mtime": 1787044488629.3792,
+    "mtime": 1787045670384.6904,
     "hash": "fae1a17b6940f11fd45aebd6d3275596"
   },
   "Features/Capture/CaptureSourceSheet.swift": {
-    "mtime": 1787043954909.3914,
+    "mtime": 1787045670003.382,
     "hash": "338882eebeb1d0b6955a8df45a91e572"
   },
   "Features/PurchaseReview/ReviewView.swift": {
-    "mtime": 1787044902917.3696,
+    "mtime": 1787045670729.0073,
     "hash": "96347368e2d17b46019ea6777784dcd3"
   },
   "Features/PurchaseReview/ReviewViewModel.swift": {
-    "mtime": 1787044894961.3699,
+    "mtime": 1787045670729.0073,
     "hash": "511d9cd83606ba315148693c99f1db76"
   },
   "Features/Home/HomeView.swift": {
-    "mtime": 1787044187249.386,
+    "mtime": 1787045670212.3687,
     "hash": "3421bd3c1790c2a1cd7887b012421a9a"
   },
   "Features/Home/HomeViewModel.swift": {
-    "mtime": 1787044144369.387,
+    "mtime": 1787045670214.0305,
     "hash": "63e5a91320ad02f8498796bc16b98c56"
   },
   "Features/PurchaseDetail/PurchaseDetailView.swift": {
-    "mtime": 1787045124425.3645,
+    "mtime": 1787045671106.4995,
     "hash": "bd4164b336c845e339398c3d7d6d95dd"
   },
   "Features/PurchaseDetail/PurchaseDetailViewModel.swift": {
-    "mtime": 1787044318133.383,
+    "mtime": 1787045670214.3313,
     "hash": "7080354b2f0beae4c08b8f744717dab0"
   },
   "Features/PurchaseDetail/PurchaseEditView.swift": {
-    "mtime": 1787044296889.3835,
+    "mtime": 1787045670214.3313,
     "hash": "307eafaec9b16c102b8c2cebbc633751"
   },
   "Features/Shared/PurchaseRowView.swift": {
-    "mtime": 1787044154817.3867,
+    "mtime": 1787045670214.3313,
     "hash": "9c913715f7aed189fd5ef330c6720147"
   },
   "Features/Shared/PurposeChipGrid.swift": {
-    "mtime": 1787044218813.3853,
+    "mtime": 1787045670214.8892,
     "hash": "8963b28104f8f7881076fab90f091ed8"
   },
   "Features/Shared/SyncStateBadge.swift": {
-    "mtime": 1787044161181.3867,
+    "mtime": 1787045670214.8892,
     "hash": "bff3838860f023abe475f2c228d68d80"
   },
   "Features/Shared/ZoomableImageView.swift": {
-    "mtime": 1787044223425.3853,
+    "mtime": 1787045670214.8892,
     "hash": "4520450d0938a9e75c735f6fdbaa295e"
   },
   "Features/Vault/VaultView.swift": {
-    "mtime": 1787044363905.382,
+    "mtime": 1787045670214.8892,
     "hash": "547fed6889efc7fbaf7326d4c36f3dc8"
   },
   "Features/Vault/VaultViewModel.swift": {
-    "mtime": 1787044344589.3826,
+    "mtime": 1787045670215.2324,
     "hash": "0690c37e75c35c4b3a4eb00c8f5163cf"
   },
   "Core/Notifications/LocalNotificationScheduler.swift": {
-    "mtime": 1787044423629.3806,
+    "mtime": 1787045670384.6904,
     "hash": "7464736f0cbd8a5a44b5662f57362468"
   },
   "Features/Items/ItemDetailView.swift": {
-    "mtime": 1787044509233.3787,
+    "mtime": 1787045670384.6904,
     "hash": "773097d2c7e8b1878a76c67eed87a573"
   },
   "Features/Items/ItemDetailViewModel.swift": {
-    "mtime": 1787044495421.379,
+    "mtime": 1787045670385.901,
     "hash": "1cc9091759b00f12115eb70cc044d60b"
   },
   "Features/Items/ItemEditView.swift": {
-    "mtime": 1787044470929.3796,
+    "mtime": 1787045670385.901,
     "hash": "0bf1830dc1969beff589c01cdc0d4280"
   },
   "Features/Items/ItemsView.swift": {
-    "mtime": 1787045106229.365,
+    "mtime": 1787045671106.4995,
     "hash": "e8469f20b092d10552ff9ed51402b71c"
   },
   "Features/Items/ItemsViewModel.swift": {
-    "mtime": 1787044431429.3804,
+    "mtime": 1787045670385.901,
     "hash": "fbdf75659e35b517cd9740b5e08039e4"
   },
   "Core/Exports/ExportFileWriter.swift": {
-    "mtime": 1787044655221.3752,
+    "mtime": 1787045670630.247,
     "hash": "51b65e267e3bd798e594272cca02f489"
   },
   "Core/Exports/PDFPageComposer.swift": {
-    "mtime": 1787044584509.377,
+    "mtime": 1787045670631.5498,
     "hash": "303dbcd63c0d65186c06712eafd17ae2"
   },
   "Core/Exports/ProofPackPDFRenderer.swift": {
-    "mtime": 1787044615165.3762,
+    "mtime": 1787045670631.5498,
     "hash": "2b97bbadf1534f9e506cfe7a66504530"
   },
   "Core/Exports/ProofPackType.swift": {
-    "mtime": 1787044774469.3726,
+    "mtime": 1787045670631.5498,
     "hash": "c68ccd0d8f418566efa0802406c69562"
   },
   "Core/Subscriptions/StoreKitSubscriptionService.swift": {
-    "mtime": 1787044869133.3704,
+    "mtime": 1787045670729.0073,
     "hash": "eada868e459553df13093355a573e2bf"
   },
   "Features/Exports/ExportBuilderView.swift": {
-    "mtime": 1787044668649.375,
+    "mtime": 1787045670631.5498,
     "hash": "931ae6cf7a6769a40a6e6844f66e5d20"
   },
   "Features/Exports/ExportBuilderViewModel.swift": {
-    "mtime": 1787044644929.3755,
+    "mtime": 1787045670632.0476,
     "hash": "9fb4a5d7d759305a37caf08eb002a648"
   },
   "Features/Paywall/PaywallView.swift": {
-    "mtime": 1787044885153.37,
+    "mtime": 1787045670729.0073,
     "hash": "3ffd1b69256dc967b718c0860c7458a9"
   },
   "Features/Settings/SettingsView.swift": {
-    "mtime": 1787045019845.367,
+    "mtime": 1787045670926.3435,
     "hash": "4445c93ec014a27cb0b7ed0767aadefd"
   },
   "Features/Settings/SettingsViewModel.swift": {
-    "mtime": 1787045002813.3674,
+    "mtime": 1787045670928.1328,
     "hash": "ed43a23df15badbef4160fb43e4f9c37"
   },
   "supabase/functions/delete-account/index.ts": {
-    "mtime": 1787044968141.3682,
+    "mtime": 1787045670928.2307,
     "hash": "8c68ea24bbdea7970cdd039b652c3eb0"
   },
   "Tests/Unit/SwiftDataPurchaseRepositoryTests.swift": {
-    "mtime": 1787045147061.364,
+    "mtime": 1787045671106.4995,
     "hash": "6aa29316a8172062a6d03df19db2194c"
+  },
+  "Core/LocalOnly/LocalOnlyAttachmentService.swift": {
+    "mtime": 1787835639018.892,
+    "hash": "13c0f1aa4a206066a095a019504f2e16"
+  },
+  "Core/LocalOnly/LocalOnlyAuthService.swift": {
+    "mtime": 1787835632622.892,
+    "hash": "8821f6c6ee75dbdfe0c19538f0098e4b"
+  },
+  "Core/Storage/LocalAttachmentFileStore.swift": {
+    "mtime": 1787835615310.8926,
+    "hash": "23dcde096c64c3dd4214c749222bdd9d"
+  },
+  "SETUP.md": {
+    "mtime": 1787796385144.648,
+    "hash": "a1489a1474ffedf80e7ce0115ae68a63"
   }
 }
