@@ -3,7 +3,11 @@ import SwiftData
 
 @main
 struct ReceiptVaultApp: App {
-    @State private var environment = AppEnvironment.live()
+    // TEMPORARY: running fully local, no Supabase project needed, no
+    // sign-in screen (see AppEnvironment.localOnly()'s doc comment).
+    // Switch to `.live()` once Config/Secrets.xcconfig is filled in with
+    // a real Supabase project - see SETUP.md.
+    @State private var environment = AppEnvironment.localOnly()
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {

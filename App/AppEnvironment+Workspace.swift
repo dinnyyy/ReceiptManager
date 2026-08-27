@@ -7,6 +7,12 @@ extension AppEnvironment {
     /// exists rather than creating a duplicate. Safe to call on every
     /// launch.
     func bootstrapWorkspace(for session: AuthSession) async {
+        guard !isLocalOnly else {
+            // `.localOnly()` already set currentWorkspaceID; never touch
+            // SupabaseBackend.shared in this mode (it would crash if
+            // Config/Secrets.xcconfig isn't filled in - see AppEnvironment.swift).
+            return
+        }
         do {
             let workspace = try await SupabaseBackend.shared.createInitialWorkspace()
             currentWorkspaceID = workspace.id

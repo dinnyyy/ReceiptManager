@@ -54,6 +54,13 @@ docs/                   Source research & specification documents
 
 ## Getting started (on a Mac with Xcode)
 
+**Fastest path to just look at the app**: `ReceiptVaultApp.swift` currently
+points at `AppEnvironment.localOnly()`, which skips sign-in and Supabase
+entirely - capture/OCR/Review/Vault/Items/Export all work for real against
+an on-disk local database. Skip straight to step 2 below; you don't need a
+Supabase project for this. Switch it to `.live()` (see the comment at the
+top of that file) once you want real auth/backup/sync.
+
 1. Copy `Config/Secrets.xcconfig.template` to `Config/Secrets.xcconfig` and
    fill in your Supabase project's URL and anon key (see the template's
    comments - the anon key is safe to ship, RLS protects every table).

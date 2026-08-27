@@ -170,6 +170,13 @@ project). Initialize a fresh clone with `npx @sentropic/graphify .`.
 
 ## 4a. RESUME HERE if this session ended mid-work
 
+**Note:** `ReceiptVaultApp.swift` currently boots with
+`AppEnvironment.localOnly()`, not `.live()` - this was a deliberate
+temporary change so the app can be built and clicked through without a
+Supabase project configured (no sign-in, no network calls; see
+`AppEnvironment.localOnly()`'s doc comment and `Core/LocalOnly/`). Switch
+it back to `.live()` before shipping anything or testing real auth/sync.
+
 **All 15 build tasks are done.** Every screen and service in the spec's
 P0 scope exists in source and is wired together (verified by a manual
 type-reference audit: every custom View/service type referenced from

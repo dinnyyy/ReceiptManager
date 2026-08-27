@@ -24,11 +24,17 @@ final class AppEnvironment {
     let notificationScheduler: NotificationScheduler
     let analyticsService: AnalyticsService
     let syncEngine: SyncEngine?
+    let isLocalOnly: Bool
 
     /// V1 has exactly one personal workspace per account (spec 7.1); this
     /// is populated right after `create_initial_workspace` succeeds during
     /// sign-in and read by every screen that needs to scope a query.
     var currentWorkspaceID: UUID?
+
+    /// Fixed workspace id used by `.localOnly()` so a relaunch of the app
+    /// keeps seeing the same local data instead of minting a new empty
+    /// workspace every time.
+    static let localOnlyWorkspaceID = UUID(uuidString: "00000000-0000-0000-0000-0000000000BB")!
 
     init(
         modelContainer: ModelContainer,
@@ -42,7 +48,8 @@ final class AppEnvironment {
         subscriptionService: SubscriptionService,
         notificationScheduler: NotificationScheduler,
         analyticsService: AnalyticsService,
-        syncEngine: SyncEngine?
+        syncEngine: SyncEngine?,
+        isLocalOnly: Bool = false
     ) {
         self.modelContainer = modelContainer
         self.authService = authService
@@ -56,6 +63,7 @@ final class AppEnvironment {
         self.notificationScheduler = notificationScheduler
         self.analyticsService = analyticsService
         self.syncEngine = syncEngine
+        self.isLocalOnly = isLocalOnly
     }
 
     static func live() -> AppEnvironment {
@@ -78,6 +86,40 @@ final class AppEnvironment {
             analyticsService: NoOpAnalyticsService(),
             syncEngine: SyncEngine(modelContext: context, backend: backend, attachmentService: attachmentService)
         )
+    }
+
+    /// Temporary: run the app entirely on-device with no Supabase project
+    /// configured at all - no sign-in screen, no network calls anywhere.
+    /// Capture/OCR/Review/Vault/Items/Export/Notifications all work for
+    /// real against a real on-disk SwiftData store; only the parts that
+    /// inherently need a backend (actually backing up to the cloud,
+    /// account deletion, real StoreKit purchases) are stubbed out. Data
+    /// persists across relaunches under a fixed local workspace id.
+    ///
+    /// Switch `ReceiptVaultApp` back to `.live()` once
+    /// `Config/Secrets.xcconfig` is filled in with a real Supabase project
+    /// - see `Config/Secrets.xcconfig.template` and `SETUP.md`.
+    static func localOnly() -> AppEnvironment {
+        let container = PersistenceSchema.makeContainer()
+        let context = ModelContext(container)
+
+        let environment = AppEnvironment(
+            modelContainer: container,
+            authService: LocalOnlyAuthService(),
+            purchaseRepository: SwiftDataPurchaseRepository(modelContext: context),
+            itemRepository: SwiftDataItemRepository(modelContext: context),
+            attachmentService: LocalOnlyAttachmentService(),
+            attachmentRepository: SwiftDataAttachmentRepository(modelContext: context),
+            ocrService: VisionOCRService(),
+            fieldParser: DefaultReceiptFieldParser(),
+            subscriptionService: PreviewSubscriptionService(),
+            notificationScheduler: LocalNotificationScheduler(),
+            analyticsService: NoOpAnalyticsService(),
+            syncEngine: nil,
+            isLocalOnly: true
+        )
+        environment.currentWorkspaceID = Self.localOnlyWorkspaceID
+        return environment
     }
 
     /// In-memory container + mock services for SwiftUI previews and UI
