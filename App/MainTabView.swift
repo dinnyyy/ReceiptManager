@@ -53,7 +53,7 @@ struct MainTabView: View {
         case .itemDetail(let id):
             ItemDetailView(itemID: id)
         case .itemEdit(let id, let prefillPurchaseID):
-            ItemEditView(itemID: id, prefillFromPurchaseID: prefillPurchaseID)
+            ItemEditView(itemID: id, prefillFromPurchaseID: prefillPurchaseID, onSaved: {})
         }
     }
 }
