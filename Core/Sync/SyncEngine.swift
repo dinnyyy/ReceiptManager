@@ -192,8 +192,7 @@ final class SyncEngine {
     // MARK: - Attachments
 
     private func uploadAttachment(_ id: UUID) async throws {
-        let descriptor = FetchDescriptor<AttachmentEntity>(predicate: #Predicate { $0.id == id })
-        guard let entity = try modelContext.fetch(descriptor).first, let localPath = entity.localFilePath else { return }
+        guard let entity = try fetchAttachmentEntity(id), let localPath = entity.localFilePath else { return }
 
         let data = try Data(contentsOf: URL(fileURLWithPath: localPath))
         try await backend.uploadFile(data: data, storagePath: entity.storagePath, mimeType: entity.mimeType)
@@ -235,6 +234,10 @@ final class SyncEngine {
         try modelContext.fetch(FetchDescriptor<ItemEntity>(predicate: #Predicate { $0.id == id })).first
     }
 
+    private func fetchAttachmentEntity(_ id: UUID) throws -> AttachmentEntity? {
+        try modelContext.fetch(FetchDescriptor<AttachmentEntity>(predicate: #Predicate { $0.id == id })).first
+    }
+
     private func setEntitySyncState(_ operation: OutboxOperationEntity, to state: SyncState) {
         switch operation.entityType {
         case .purchase:
@@ -248,9 +251,7 @@ final class SyncEngine {
                 try? modelContext.save()
             }
         case .attachment:
-            let entityID = operation.entityID
-            let descriptor = FetchDescriptor<AttachmentEntity>(predicate: #Predicate { $0.id == entityID })
-            if let entity = try? modelContext.fetch(descriptor).first {
+            if let entity = try? fetchAttachmentEntity(operation.entityID) {
                 entity.syncState = state
                 try? modelContext.save()
             }
