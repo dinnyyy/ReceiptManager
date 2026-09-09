@@ -6,7 +6,7 @@ import Foundation
 /// mutable label"). Verified against the July/June boundary in
 /// AustralianFinancialYearTests, mirroring the edge cases already exercised
 /// in the Python prototype referenced in CLAUDE.md.
-public struct AustralianFinancialYear: Equatable, Sendable {
+public struct AustralianFinancialYear: Equatable, Hashable, Sendable {
     /// The calendar year the financial year starts in, e.g. 2026 for
     /// "FY2026-27" (1 July 2026 - 30 June 2027).
     public let startYear: Int

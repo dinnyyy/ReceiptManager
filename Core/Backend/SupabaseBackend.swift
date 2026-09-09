@@ -93,7 +93,7 @@ final class SupabaseBackend: Sendable {
 
     func uploadFile(data: Data, storagePath: String, mimeType: String) async throws {
         try await client.storage.from("proof-files").upload(
-            path: storagePath, file: data, options: FileOptions(contentType: mimeType, upsert: true)
+            storagePath, data: data, options: FileOptions(contentType: mimeType, upsert: true)
         )
     }
 
