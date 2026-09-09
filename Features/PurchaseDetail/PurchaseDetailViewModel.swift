@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import PhotosUI
 import Observation
 import ReceiptVaultCore
 
@@ -51,8 +50,8 @@ final class PurchaseDetailViewModel {
         }
     }
 
-    func addAttachment(from item: PhotosPickerItem) async {
-        guard let purchase, let data = try? await item.loadTransferable(type: Data.self) else { return }
+    func addAttachment(data: Data) async {
+        guard let purchase else { return }
         let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("jpg")
         do {
             try data.write(to: tempURL)

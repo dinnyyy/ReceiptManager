@@ -138,7 +138,10 @@ struct PurchaseDetailView: View {
                     get: { nil },
                     set: { (item: PhotosPickerItem?) in
                         guard let item else { return }
-                        Task { await viewModel.addAttachment(from: item) }
+                        Task {
+                            guard let data = try? await item.loadTransferable(type: Data.self) else { return }
+                            await viewModel.addAttachment(data: data)
+                        }
                     }
                 ), matching: .images) {
                     Label("Add attachment", systemImage: "paperclip")
