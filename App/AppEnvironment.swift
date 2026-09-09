@@ -119,6 +119,11 @@ final class AppEnvironment {
             isLocalOnly: true
         )
         environment.currentWorkspaceID = Self.localOnlyWorkspaceID
+        LocalOnlyDemoData.seedIfNeeded(
+            purchaseRepository: environment.purchaseRepository,
+            itemRepository: environment.itemRepository,
+            workspaceID: Self.localOnlyWorkspaceID
+        )
         return environment
     }
 
