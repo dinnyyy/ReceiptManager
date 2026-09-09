@@ -248,7 +248,8 @@ final class SyncEngine {
                 try? modelContext.save()
             }
         case .attachment:
-            let descriptor = FetchDescriptor<AttachmentEntity>(predicate: #Predicate { $0.id == operation.entityID })
+            let entityID = operation.entityID
+            let descriptor = FetchDescriptor<AttachmentEntity>(predicate: #Predicate { $0.id == entityID })
             if let entity = try? modelContext.fetch(descriptor).first {
                 entity.syncState = state
                 try? modelContext.save()

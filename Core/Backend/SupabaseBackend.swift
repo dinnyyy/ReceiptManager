@@ -37,8 +37,19 @@ final class SupabaseBackend: Sendable {
         try await client.auth.signInWithOTP(email: email)
     }
 
+    struct MissingSessionAfterOTPVerification: Error {}
+
     func verifyEmailOTP(email: String, code: String) async throws -> Session {
-        try await client.auth.verifyOTP(email: email, token: code, type: .email)
+        let response = try await client.auth.verifyOTP(email: email, token: code, type: .email)
+        switch response {
+        case .session(let session):
+            return session
+        case .user:
+            // Email OTP sign-in always yields a session on success; `.user`
+            // is only the email-change confirmation-pending case, which
+            // shouldn't occur for `type: .email`.
+            throw MissingSessionAfterOTPVerification()
+        }
     }
 
     func signOut() async throws {
